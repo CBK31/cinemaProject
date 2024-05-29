@@ -1,4 +1,4 @@
-
+//
 let boll = true;
 let timing = 0;
 let formInput = document.querySelector(".formclass");
@@ -100,9 +100,9 @@ function myFetcher(request) {
 
 function resultDisplayer(rowss) {
     for (let i = 0; i < rowss.length; i++) {
-        //  const element = array[i];
-        //console.log(rowss[i].show.name + " score : " + rowss[i].score);
-       constructElement(rowss[i].show.image.medium , rowss[i].show.name , rowss[i].score);
+  //  const element = array[i];
+  //console.log(rowss[i].show.name + " score : " + rowss[i].score);
+ constructElement(rowss[i].show.image.medium , rowss[i].show.name , rowss[i].score);
 
 //console.log("cbk the best : " + );
 
@@ -144,6 +144,7 @@ moviePicp.src = MoviePicParam;
 movieNp.innerText = MovieNameParam;
 movieRatep.innerText = (MovieRateparam*100).toFixed(2) + " % ";
 watchListButtomp.innerText = "+ Watch List" ; 
+
 }
 
 
