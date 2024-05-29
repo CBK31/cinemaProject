@@ -6,7 +6,7 @@ body {
 
     font-family: "Source Sans Pro", "Arial", "sans-serif";
     font-size: 1.3rem;
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255); 
     text-decoration: none;
 }
 
@@ -158,10 +158,6 @@ z-index: 50;
 font-size : 1rem ;
 
 
-
-
-
-
 */
 
 .innerIcons {
@@ -213,8 +209,6 @@ min-width: 45px;
        background-image: url(/temrin_4_cineSearch/images/mainimg2.jpg);
     background-image: url(/temrin_4_cineSearch/images/coverimg.jpg);
 background-image: url(./images/mainimg2.jpg);\
-
-
 */
 
 .imageDiv {

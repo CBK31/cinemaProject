@@ -1,3 +1,4 @@
+//
 let boll = true;
 let timing = 0;
 let formInput = document.querySelector(".formclass");
@@ -83,14 +84,12 @@ function prepaireFetch(userinput) {
 function myFetcher(request) {
   fetch(request)
     .then(function (preResult) {
-      let result = preResult.json();
-      console.log(result);
-      return result;
+      return preResult.json();
     })
     .then(function (results) {
       console.log("fetch good");
       console.log(results);
-
+      //console.log("cbk the best : " + results.length);
       resultDisplayer(results);
     })
     .catch(function (request) {
