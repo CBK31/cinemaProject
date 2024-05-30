@@ -14,43 +14,18 @@ const userError = require("./error");
 
 const signUp = async (req, res) => {
   try {
-    // console.log("1!!!!!!!!!!!!!!!!!!");
     const { email, firstName, lastName, password, dob, phoneNumber } = req.body;
-    // console.log(
-    //   email +
-    //     " ///" +
-    //     firstName +
-    //     " ///" +
-    //     lastName +
-    //     " ///" +
-    //     password +
-    //     " ///" +
-    //     dob +
-    //     " ///" +
-    //     phoneNumber
-    // );
     await createUser(email, firstName, lastName, password, dob, phoneNumber);
-
     res.status(200).json({ message: "user added successfully" });
   } catch (error) {
-    console.log(error.message);
     res.status(400).json({ message: error.message });
   }
 };
 
 const login = async (req, res) => {
   try {
-    const { email, password } = req.body;
-
-    const userFinder = await logInService(email, password);
-
-    if (userFinder) {
-      req.session.isLoggedIn = true;
-      req.session.userId = userFinder._id;
-
-      const token = jwt.sign({ email: email }, "a_secret_key");
-      res.status(200).json({ token: token });
-    }
+    const result = await logInService(req);
+    res.status(200).send(result);
   } catch (error) {
     res.status(error.statusCode).json({ message: error.message });
   }
