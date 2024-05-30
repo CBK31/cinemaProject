@@ -1,1 +1,18 @@
-.vscode
+
+
+# Ignore node_modules directory
+back-end/node_modules/
+
+
+# compiled output
+#sjniuedw
+/dist
+/node_modules
+/build
+
+# Logs
+#npm-debug.log*
+#pnpm-debug.log*
+#yarn-debug.log*
+#yarn-error.log*
+#lerna-debug.log*
