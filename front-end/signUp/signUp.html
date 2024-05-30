@@ -1,21 +1,49 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
-</head> 
+</head>
+
 <body>
     <form action="../homePage/index.html" method="GET" id="sigUpForm">
-      first name :  <input type="text"  placeholder="first name" required>
-      last name  :  <input type="text" required placeholder="last name">
-      email :  <input type="email" required placeholder="email">
-      phone number  :  <input type="number" required placeholder="+961 0000 000">
-      password  :  <input type="password" required placeholder="password ">
-      date of birth :<input type="date" required placeholder="date of birth">
-      <input type="submit" value="sign up">
-<!-- <input type="button" value="login"> -->
+        first name : <input type="text" placeholder="first name" required>
+        last name : <input type="text" required placeholder="last name">
+        email : <input type="email" required placeholder="email">
+        phone number : <input type="number" required placeholder="+961 0000 000">
+        password : <input type="password" required placeholder="password ">
+        date of birth :<input type="date" required placeholder="date of birth">
+        <input type="submit" value="sign up">
+
     </form>
     <script src="signUp.js"></script>
 </body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+
+<body>
+    <form action="../homePage/index.html" method="GET" id="signUpForm">
+        first name : <input type="text" name="firstName" placeholder="first name" required>
+        last name : <input type="text" name="lastName" required placeholder="last name">
+        email : <input type="email" name="email" required placeholder="email">
+        phone number : <input type="number" name="phoneNumber" required placeholder="+961 0000 000">
+        password : <input type="password" name="password" required placeholder="password ">
+        date of birth :<input type="date" name="dob" required placeholder="date of birth">
+        <input type="submit" value="sign up">
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="signUp.js"></script>
+</body>
+
 </html>

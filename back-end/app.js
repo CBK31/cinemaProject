@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
+// const cors = require("cors");
 const bodyParser = require("body-parser");
 const { inspect } = require("util");
 // const session = require("express-session");
@@ -20,6 +21,7 @@ mongoose
     console.log(err);
   });
 
+// app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.json());

@@ -1,23 +1,29 @@
-const signup = document.getElementById("signUpForm");
+document
+  .getElementById("signUpForm")
+  .addEventListener("submit", async function (event) {
+    event.preventDefault();
 
-const forwardRequest = async () => {
-  const response = await axios({
-    method: "GET",
-    url: `http://localhost:3000/user/signup`,
-    data: {
-      email: "charbelak31@gmail.com",
-      firstName: "charbel",
-      lastName: "abi khalil",
-      password: "This is my pass 00",
-      phoneNumber: 38748979,
-      dob: "4/2/1990",
-    },
-    headers: {
-      "Content-Type": "application/json",
-      // Authorization: req.headers["authorization"],
-    },
+    const formData = new FormData(event.target);
+    const data = {
+      email: formData.get("email"),
+      firstName: formData.get("firstName"),
+      lastName: formData.get("lastName"),
+      password: formData.get("password"),
+      phoneNumber: formData.get("phoneNumber"),
+      dob: formData.get("dob"),
+    };
+
+    try {
+      const response = await axios({
+        method: "POST",
+        url: `http://localhost:3000/user/signup`,
+        data: data,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      console.log("Response:", response);
+    } catch (error) {
+      console.error("Error:", error);
+    }
   });
-  console.log(response);
-};
-//
-const result = forwardRequest();
