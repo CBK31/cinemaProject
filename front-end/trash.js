@@ -16,5 +16,6 @@ const forwardRequest = async () => {
     },
   });
 };
+//
 const result = forwardRequest();
 console.log(result);
