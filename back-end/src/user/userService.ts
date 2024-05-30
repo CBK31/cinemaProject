@@ -28,12 +28,11 @@ const createUser = async (
   firstName: String,
   lastName: String,
   password: String,
-  isVIP: Boolean,
-  isAdmin: Boolean
+  dob: String,
+  phoneNumber: Number
 ) => {
-  let hashedpass = await bcrypt.hash(password, 12);
-
   let userF = await findUserByEmail(email);
+  let hashedpass = await bcrypt.hash(password, 12);
 
   if (userF) {
     const error: any = new Error(errorMessages.userExist.message);
@@ -45,8 +44,8 @@ const createUser = async (
       firstName: firstName,
       lastName: lastName,
       password: hashedpass,
-      isVIP: isVIP,
-      isAdmin: isAdmin,
+      dob: dob,
+      phoneNumber: phoneNumber,
     }).save();
   }
 };

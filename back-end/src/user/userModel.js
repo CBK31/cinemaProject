@@ -6,8 +6,9 @@ const userSchema = new schema({
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
   password: { type: String, required: true },
-  isVIP: { type: Boolean, default: false, required: true },
-  isAdmin: { type: Boolean, default: false, required: true },
+  dob: { type: String, default: false, required: true },
+  phoneNumber: { type: Number, default: false, required: true },
+  favoriteMovies: { type: [String] },
 });
 
 module.exports = mongoose.model("User", userSchema);
