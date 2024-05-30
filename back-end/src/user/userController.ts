@@ -21,12 +21,26 @@ declare module "express-session" {
 
 const signUp = async (req: Request, res: Response): Promise<void> => {
   try {
+    console.log("1!!!!!!!!!!!!!!!!!!");
     const { email, firstName, lastName, password, dob, phoneNumber } = req.body;
-
+    console.log(
+      email +
+        " ///" +
+        firstName +
+        " ///" +
+        lastName +
+        " ///" +
+        password +
+        " ///" +
+        dob +
+        " ///" +
+        phoneNumber
+    );
     await createUser(email, firstName, lastName, password, dob, phoneNumber);
 
     res.status(200).json({ message: "user added successfully" });
   } catch (error) {
+    console.log(error.message);
     res.status(400).json({ message: error.message });
   }
 };

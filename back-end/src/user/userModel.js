@@ -6,8 +6,8 @@ const userSchema = new schema({
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
   password: { type: String, required: true },
-  dob: { type: String, default: false, required: true },
-  phoneNumber: { type: Number, default: false, required: true },
+  dob: { type: String },
+  phoneNumber: { type: Number },
   favoriteMovies: { type: [String] },
 });
 
