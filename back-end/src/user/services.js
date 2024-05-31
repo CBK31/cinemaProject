@@ -50,7 +50,8 @@ const createUser = async (
   }
 };
 
-const logInService = async (email, password) => {
+const logInService = async (req) => {
+  const { email, password } = req.body;
   let userFinder = await findUserByEmail(email);
 
   if (userFinder) {
@@ -79,14 +80,6 @@ const findUserFromToken = async (req) => {
   return await findUserByEmail(userEmail);
 };
 
-// export {
-//   findUserById,
-//   createUser,
-//   logInService,
-//   findUserByEmail,
-//   updatePassword,
-//   findUserFromToken,
-// };
 module.exports = {
   findUserById,
   createUser,
