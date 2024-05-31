@@ -54,6 +54,15 @@ const logInService = async (req) => {
   const { email, password } = req.body;
   let userFinder = await findUserByEmail(email);
 
+  // const toSign: types.userInfoToSign = {
+  //   exp: Math.floor(Date.now() / 1000) + 60 * 20,
+  //   _id: userInfo._id,
+  //   dob: userInfo.dob,
+  // };
+
+  // const token = jwt.sign(JSON.stringify(toSign), process.env.JWT_SECRET_KEY!);
+  // return token;
+
   if (userFinder) {
     let passChecker = await bcrypt.compare(password, userFinder.password);
 

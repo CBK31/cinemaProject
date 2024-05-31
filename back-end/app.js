@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("", (req, res, next) => {
-  // console.log(req);
+  console.log(req);
   console.log(
     "========================================================================================="
   );
