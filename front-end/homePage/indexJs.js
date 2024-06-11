@@ -1,4 +1,3 @@
-
 let boll = true;
 let timing = 0;
 let formInput = document.querySelector(".formclass");
