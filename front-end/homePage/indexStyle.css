@@ -4,11 +4,10 @@ body {
 }
 
 .textStyle {
-
-    font-family: "Source Sans Pro", "Arial", "sans-serif";
-    font-size: 1.3rem;
-    color: rgb(255, 255, 255); 
-    text-decoration: none;
+  font-family: "Source Sans Pro", "Arial", "sans-serif";
+  font-size: 1.3rem;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
 }
 
 .nav_bar {
@@ -24,54 +23,53 @@ body {
 }
 
 .logo {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
 
-    display: flex;
-    margin-left: 2%;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  margin-left: 2%;
+  align-items: center;
+  justify-content: center;
 }
 
 .logoImg {
-
-    width: 90%;
-    height: 90%;
+  width: 90%;
+  height: 90%;
 }
 
 .mainSearch {
-    width: 23%;
-    height: 40px;
-    border: 2px rgb(180, 219, 255) solid;
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-width: 150px;
-    background-color: #b4dbff;
+  width: 23%;
+  height: 40px;
+  border: 2px rgb(180, 219, 255) solid;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 150px;
+  background-color: #b4dbff;
 }
 
 .formclass {
-    width: 80%;
-    border-style: none;
+  width: 80%;
+  border-style: none;
 
-    height: 90%;
-    text-size-adjust: 50px;
-    z-index: 50;
-    margin-right: 25px;
+  height: 90%;
+  text-size-adjust: 50px;
+  z-index: 50;
+  margin-right: 25px;
 }
 
 .inputMovie {
-    width: 100%;
-    height: 100%;
-    border: none;
-    margin-left: 10px;
-    height: 100%;
-    background-color: transparent;
-    border: 0px solid;
-    font-size: larger;
-    font-family: "Source Sans Pro", "Arial", "sans-serif";
+  width: 100%;
+  height: 100%;
+  border: none;
+  margin-left: 10px;
+  height: 100%;
+  background-color: transparent;
+  border: 0px solid;
+  font-size: larger;
+  font-family: "Source Sans Pro", "Arial", "sans-serif";
 
     font-size: 1.2rem;
    
@@ -88,45 +86,42 @@ body {
 
 
 .resetButton {
-    background-color: rgb(34, 43, 43);
-    width: 30px;
-    height: 30px;
-    z-index: 50;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 5px;
-    min-width: 30px;
-    min-height: 30px;
+  background-color: rgb(34, 43, 43);
+  width: 30px;
+  height: 30px;
+  z-index: 50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+  min-width: 30px;
+  min-height: 30px;
 }
 
-
 .mainIcons {
-
-
-    min-width: 150px;
-    width: 25%;
-    height: 50px;
-    margin-right: 3%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  min-width: 150px;
+  width: 25%;
+  height: 50px;
+  margin-right: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 
 
 
 .innerIcons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    margin: 5px;
-    min-width: 45px;
-    min-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin: 5px;
+  min-width: 45px;
+  min-height: 45px;
 }
 
 
@@ -140,8 +135,7 @@ body {
 }
 
 .contactUsImg {
-    width: 33px;
-
+  width: 33px;
 }
 
 .mainImg {
@@ -153,14 +147,11 @@ body {
 
 
 .imageDiv {
+  background-image: url(./images/coverimg.jpg);
 
-
-background-image: url(./images/coverimg.jpg);
-
-    width: 100%;
-    height: 200px;
-    background-size: cover;
-
+  width: 100%;
+  height: 200px;
+  background-size: cover;
 }
 
 .innerImgDiv {
@@ -170,122 +161,115 @@ background-image: url(./images/coverimg.jpg);
     display: flex;
   
   background-color: rgba(180, 219, 255, 0.2);
-
 }
 
 .textWrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .welcomeText {
-    font-size: 3.4em;
-    font-weight: 700;
-    margin-left: 10%;
-    margin-top: -8%;
-    margin-bottom: 1%;
-
-
+  font-size: 3.4em;
+  font-weight: 700;
+  margin-left: 10%;
+  margin-top: -8%;
+  margin-bottom: 1%;
 }
 
 .underWelcomeText {
-
-    font-size: 1.3em;
-    font-weight: 700;
-    margin-left: 10%;
-    margin-bottom: 0%;
-    margin-top: 0%;
-    width: 100%;
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-left: 10%;
+  margin-bottom: 0%;
+  margin-top: 0%;
+  width: 100%;
 }
 
 
 
 .resultContainer {
-    padding-left: 5%;
-    padding-right: 5%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 90%;
-    min-height: 250px;
-    flex-wrap: wrap;
-    transition: all 2s;
-    margin-top: 2.5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  min-height: 250px;
+  flex-wrap: wrap;
+  transition: all 2s;
+  margin-top: 2.5%;
 
-background-image: url(./images/movieShowBG.svg);
-height: 130%;
-
+  background-image: url(./images/movieShowBG.svg);
+  height: 130%;
 }
  
 
 .mainShowMovie {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    margin: 1.5%;
-    width: 170px;
-    margin-top: 3%;
-    height: 320px;
-    border: rgb(0, 0, 0) 2px solid;
-    background-color: rgb(0, 183, 197);
-    border-radius: 15px;
-    flex-direction: column;
-    transition: all 0.2s;
+  margin: 1.5%;
+  width: 170px;
+  margin-top: 3%;
+  height: 320px;
+  border: rgb(0, 0, 0) 2px solid;
+  background-color: rgb(0, 183, 197);
+  border-radius: 15px;
+  flex-direction: column;
+  transition: all 0.2s;
 }
 
 .mainShowMovie:hover {
-    width: 200px;
-    height: 376px;
-    margin: 0.3%;
-    margin-top: -1.8%;
-    margin-bottom: 0%;
+  width: 200px;
+  height: 376px;
+  margin: 0.3%;
+  margin-top: -1.8%;
+  margin-bottom: 0%;
 }
 
 .innerMoviePic {
-    margin: 0%;
-    width: 100%;
-    height: 70%;
-    background-color: rgb(132, 132, 132);
-    border-radius: 15px;
+  margin: 0%;
+  width: 100%;
+  height: 70%;
+  background-color: rgb(132, 132, 132);
+  border-radius: 15px;
 }
 
 .movieName {
-    width: 100%;
-    height: 9%;
-    margin: 0%;
-    background-color: rgba(165, 42, 42, 0);
-    margin-top: 3%;
-    display: flex;
-    align-items: center;
-   justify-content: center;
-    font-size: 0.9rem;
- 
+  width: 100%;
+  height: 9%;
+  margin: 0%;
+  background-color: rgba(165, 42, 42, 0);
+  margin-top: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
 }
 
 
 .movieRating {
-    width: 100%;
-    background-color: rgba(0, 255, 255, 0);
-    height: 6%;
-    margin-top: 1%;
-    display: flex;
-    align-items: center;
-   justify-content: center;
+  width: 100%;
+  background-color: rgba(0, 255, 255, 0);
+  height: 6%;
+  margin-top: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .addToWatchList {
-    margin: auto;
-    width: 60%;
-    background-color: rgb(0, 63, 165,0.8);
-    height: 9%;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    border: rgb(0, 0, 0) 3px solid;
-font-size: 110%;
-font-weight: 200;
+  margin: auto;
+  width: 60%;
+  background-color: rgb(0, 63, 165, 0.8);
+  height: 9%;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  border: rgb(0, 0, 0) 3px solid;
+  font-size: 110%;
+  font-weight: 200;
 }
