@@ -4,7 +4,7 @@ blurrDiv.classList.add("blurrDiv");
 let bodyy = document.getElementsByTagName("body");
 bodyy.appendChild(blurrDiv);
 
-//kyv
+
 
 document
   .getElementById("signUpForm")
@@ -26,13 +26,13 @@ document
     ${formData.get("dob")}
     
     
-    `); */
+    `);*/
     const data = {
-      email: formData.get("email"),
-      firstName: formData.get("firstName"),
-      lastName: formData.get("lastName"),
-      password: formData.get("password"),
-      phoneNumber: formData.get("phoneNumber"),
+      email: formData.get("firstName"),
+      firstName: formData.get("lastName"),
+      lastName: formData.get("email"),
+      password: formData.get("phoneNumber"),
+      phoneNumber: formData.get("password"),
       dob: formData.get("dob"),
     };
 
