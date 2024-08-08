@@ -1,5 +1,6 @@
 body {
     margin: 0%;
+    z-index: auto;
 }
 
 .textStyle {
@@ -12,21 +13,15 @@ body {
 
 .nav_bar {
     width: 100%;
-    height: 70px;
+    height: 80px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    background-color: 3, 37, 65;
     background-color: rgb(3, 37, 65);
     position: sticky;
     top: 0;
 }
-
-/*
-3,37,65
-  background-color: rgb(8, 63, 108);
-*/
 
 .logo {
     width: 70px;
@@ -79,7 +74,7 @@ body {
     font-family: "Source Sans Pro", "Arial", "sans-serif";
 
     font-size: 1.2rem;
-
+   
 }
 
 .inputMovie:focus {
@@ -90,38 +85,7 @@ body {
 
 }
 
-/*font-family: 'Merriweather', serif;
-.divReset{
-   
-    width: 30px;
-    height: 30px;
-    margin-right: 1%;
-    background-color: red;
-    border-radius: 50%;
-}
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
-.resetButton{
-border: 2px orange solid ;
-width: 100%;
-height: 100%;
-z-index: 50;
-}
-.divSearch{
-    width: 30px;
-    height: 30px;
-    margin-right: 1%;
-    background-color: red;
-    border-radius: 50%;
-}
-.searchButton{
-    border: 2px orange solid ;
-    width: 100%;
-    height: 100%;
-    z-index: 50;
-
-}
-*/
 
 .resetButton {
     background-color: rgb(34, 43, 43);
@@ -151,14 +115,7 @@ z-index: 50;
 }
 
 
-/*
- border: 2px yellow solid ;
 
-    font-family: "Source Sans Pro",Arial,sans-serif
-font-size : 1rem ;
-
-
-*/
 
 .innerIcons {
     display: flex;
@@ -172,26 +129,14 @@ font-size : 1rem ;
     min-height: 45px;
 }
 
-/*.login{
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 1.1rem;
-margin: 5px;
-border-radius: 8px;
-width: 55px;
-height: 30px;
-background-color: transparent;
-border: 2px solid white;
-min-width: 45px;
-}*/
 
-.login {
-    width: 38px;
+
+.user {
+    width: 40px;
 }
 
-.savedImg {
-    width: 30px;
+.userAcc {
+    width: 38px;
 }
 
 .contactUsImg {
@@ -205,11 +150,7 @@ min-width: 45px;
 
 }
 
-/*     background-image: url(/temrin_4_cineSearch/images/coverimg.jpg);
-       background-image: url(/temrin_4_cineSearch/images/mainimg2.jpg);
-    background-image: url(/temrin_4_cineSearch/images/coverimg.jpg);
-background-image: url(./images/mainimg2.jpg);\
-*/
+
 
 .imageDiv {
 
@@ -227,8 +168,7 @@ background-image: url(./images/coverimg.jpg);
     height: 100%;
   
     display: flex;
-  /*  color: rgb(255, 255, 255);
-*/
+  
   background-color: rgba(180, 219, 255, 0.2);
 
 }
@@ -260,7 +200,7 @@ background-image: url(./images/coverimg.jpg);
     width: 100%;
 }
 
-/* */
+
 
 .resultContainer {
     padding-left: 5%;
@@ -279,8 +219,7 @@ height: 130%;
 
 }
  
-/* height: 260px; justify-content: center;   
-background-image: url(/temrin_4_cineSearch/images/movieShowBG.svg);*/
+
 .mainShowMovie {
     display: flex;
     align-items: center;
@@ -324,7 +263,7 @@ background-image: url(/temrin_4_cineSearch/images/movieShowBG.svg);*/
     font-size: 0.9rem;
  
 }
-/* text-align: center; */
+
 
 .movieRating {
     width: 100%;

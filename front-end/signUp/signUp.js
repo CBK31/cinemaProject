@@ -1,3 +1,19 @@
+let blurrDiv = document.createElement('div');
+blurrDiv.classList.add('blurrDiv') ;
+
+let bodyy =document.getElementsByTagName("body");
+bodyy.appendChild(blurrDiv);
+
+
+
+
+
+
+
+
+
+
+
 document
   .getElementById("signUpForm")
   .addEventListener("submit", async function (event) {

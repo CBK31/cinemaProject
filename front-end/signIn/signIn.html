@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="signIn.css">
+</head>
+
+<body>
+    <div class="blurrDiv"></div>
+    <div class="container">
+    <div class="signInDivForm">
+        <form action="../homePage/index.html" method="PSOT" id="signInForm">
+        <h4 id="signInheader">Sign In</h4>
+        <label for="email" class="labels">Email :</label> 
+            <input type="email" name="email" required placeholder="Email">
+        <label for="password" class="labels">Password :</label> 
+            <input type="password" name="password" required placeholder="Password ">
+        <input type="submit" value="Sign In" id="signInB">
+        <p>You don't have an account ? <a href="../signUp/signUp.html" id="loginL">Sign Up</a></p>
+    </form> 
+    </div>
+     </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="signIn.js"></script>
+</body>
+
+</html>
