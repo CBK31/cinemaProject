@@ -12,7 +12,7 @@ document
     event.preventDefault();
 
     const formData = new FormData(event.target);
-    /*   console.log(`
+    console.log(`
     ${formData.get("email")}
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     ${formData.get("firstName")}
