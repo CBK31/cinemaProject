@@ -1,18 +1,10 @@
-let blurrDiv = document.createElement('div');
-blurrDiv.classList.add('blurrDiv') ;
+let blurrDiv = document.createElement("div");
+blurrDiv.classList.add("blurrDiv");
 
-let bodyy =document.getElementsByTagName("body");
+let bodyy = document.getElementsByTagName("body");
 bodyy.appendChild(blurrDiv);
 
-
-
-
-
-
-
-
-
-
+//kyv
 
 document
   .getElementById("signUpForm")
@@ -20,7 +12,7 @@ document
     event.preventDefault();
 
     const formData = new FormData(event.target);
-  /*   console.log(`
+    /*   console.log(`
     ${formData.get("email")}
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     ${formData.get("firstName")}
