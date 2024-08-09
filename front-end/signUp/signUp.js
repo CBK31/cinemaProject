@@ -8,7 +8,7 @@ bodyy.appendChild(blurrDiv);
 
 //const forwardRequest = async (body, requestMethod, serviceUrl)
 
-await document
+document
   .getElementById("signUpForm")
   .addEventListener("submit", async function (event) {
     event.preventDefault();
