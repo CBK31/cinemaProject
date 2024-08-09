@@ -1,5 +1,4 @@
-const forwardRequest = require("../util/requestSender");
-const forward = require("../util/requestSender");
+const { forwardRequest } = require("../util/requestSender");
 
 let blurrDiv = document.createElement("div");
 blurrDiv.classList.add("blurrDiv");
@@ -13,7 +12,7 @@ await document
   .getElementById("signUpForm")
   .addEventListener("submit", async function (event) {
     event.preventDefault();
-
+    console.log("entering my signup.js fiilleee");
     // const formData = new FormData(event.target);
 
     // const data = {
