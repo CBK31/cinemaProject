@@ -2,16 +2,16 @@ const axios = require("axios");
 
 const forwardRequest = async (body, requestMethod, serviceUrl) => {
   try {
-    // const response = await axios({
-    //   method: requestMethod,
-    //   url: `${serviceUrl}`,
-    //   data: body,
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   timeout: 5000,
-    // });
-    fetch("http://localhost:3000/user/signUp", {
+     const response = await axios({
+       method: requestMethod,
+       url: `${serviceUrl}`,
+       data: body,
+       headers: {
+         "Content-Type": "application/json",
+       },
+       timeout: 5000,
+     });
+    /* fetch("http://localhost:3000/user/signUp", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,8 +24,8 @@ const forwardRequest = async (body, requestMethod, serviceUrl) => {
       .then((response) => response.json())
       .then((data) => console.log(data))
       .catch((error) => console.error("Error:", error));
-
-    return response;
+ */
+    return response.data;
   } catch (error) {
     if (error.response) {
       return {
