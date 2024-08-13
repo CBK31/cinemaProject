@@ -58,11 +58,6 @@ html, body {
     text-align:center;
     z-index: 2;
 }
-.labels{
-    padding-right: 32%;
-    width: 110px;
-    z-index: 2;
-}
 
 #signInForm input[type="email"],
 #signInForm input[type="password"] {
@@ -122,7 +117,7 @@ p,#loginL{
         margin: 2.5%; /* Decrease margin on smaller screens */
     }
 
-    .labels, #signInForm input[type="email"], #signInForm input[type="password"], #signInB {
+    #signInForm input[type="email"], #signInForm input[type="password"], #signInB {
         max-width: 90%; /* Increase max-width to allow for more space on smaller screens */
     }
 }

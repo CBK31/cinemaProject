@@ -1,0 +1,80 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    background-size: cover;
+    width: 100%;
+    height:100%;
+    position: relative;  
+ background-image: url(../homePage/images/coverimg.jpg);
+  z-index: auto;    /*default*/
+}
+.blurrDiv {
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 100%;
+    
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(10px);
+    z-index: 1; 
+}
+
+.unknownpassdiv {
+    margin: 5px;
+    background:rgb(3, 37, 65,0.8);
+    padding: 20px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    /* height: 100%; */
+    margin: 5%;
+    color: aliceblue;
+    position: relative;
+ z-index: 2;
+
+}
+#unknownpassForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    z-index: 2;
+}
+
+#unknownpassForm input[type="email"]{
+    margin: 3px 0 15px 0;
+    padding: 10px;
+    border: 1px solid aliceblue;
+    border-radius: 5px;
+    width:50%;
+    z-index: 2;
+}
+
+#unknownpassB{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(180, 219, 255, 0.3);
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    cursor: pointer;
+    margin-top: 10px;
+     width: 30%;
+     align-self: center;
+     z-index: 2;
+}
+
+#unknownpassForm input[type="submit"]:hover {
+    z-index: 2;
+    background:rgb(3, 50, 100);
+}
