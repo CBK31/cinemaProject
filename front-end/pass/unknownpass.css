@@ -29,6 +29,11 @@ html, body {
     z-index: 1; 
 }
 
+#unknownpassheader{
+    text-align:center;
+    z-index: 2;
+}
+
 .unknownpassdiv {
     margin: 5px;
     background:rgb(3, 37, 65,0.8);
