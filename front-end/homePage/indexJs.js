@@ -154,6 +154,6 @@ function fillMovieElement(
   // MovieNameParam.append();
   moviePicp.src = MoviePicParam;
   movieNp.innerText = MovieNameParam;
-  movieRatep.innerText = (MovieRateparam * 100).toFixed(2) + " % ";
-  watchListButtomp.innerText = "+ Watch List";
+  movieRatep.innerText = "★ :  " +(MovieRateparam * 100).toFixed(2) + " % ";
+  watchListButtomp.innerText = "+";
 }
