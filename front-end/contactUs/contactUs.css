@@ -1,0 +1,229 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../homePage/images/bckimg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: auto;
+}
+
+
+.textStyle {
+    margin-left: 10px;
+font-family: "Source Sans Pro", "Arial", "sans-serif";
+font-size: 1.5rem;
+color: rgb(255, 255, 255);
+text-decoration: none;
+}
+
+.nav_bar {
+  width: 100%;
+  height: 80px;
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(3, 37, 65);
+   position: sticky; 
+  top: 0;
+  background-attachment: fixed;
+  z-index: 1000; 
+}
+
+.logo {
+width: 70px;
+height: 70px;
+border-radius: 50%;
+
+display: flex;
+margin-left: 2%;
+align-items: center;
+justify-content: center;
+}
+
+.logoImg {
+width: 90%;
+height: 90%;
+}
+
+.mainIcons {
+min-width: 150px;
+width: 25%;
+height: 50px;
+margin-right: 3%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+
+
+
+.innerIcons {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 45px;
+height: 45px;
+border-radius: 50%;
+margin: 5px;
+min-width: 45px;
+min-height: 45px;
+}
+
+
+
+.user {
+  width: 40px;
+}
+
+.userAcc {
+  width: 38px;
+}
+
+.contactUsImg {
+width: 33px;
+}
+
+.mainImg {
+  width: 100%;
+
+
+}
+.aboutContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.aboutText {
+    font-family: 'Merriweather', serif; 
+    font-size: 1.2rem; 
+    color:  rgb(3, 37, 65);
+    line-height: 1.6;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .aboutText {
+        font-size: 1.5rem; /* Larger size for larger screens */
+    }
+}
+
+ 
+.contact {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 20px;
+    
+}
+
+.contact-info, .contact-form {
+  
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    color:  rgb(3, 37, 65);
+
+}
+
+.contact-info {
+/*  margin: 50px auto; */
+    width:30%;
+    text-align: center;
+    margin-right: 20px; 
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* height: 100%; */
+    justify-content: center; /* Center content vertically */
+    padding: 20px; 
+}
+
+.contact-form {
+    width: 60%;
+    text-align: left;
+    margin-right: 50px;
+    height: 100%;
+}
+
+.contact-info h2 ,h4{
+    margin-bottom: 20px; /* just for the try  */
+    margin-top: 0;
+}
+@media (min-width: 768px) {
+ .contact-info , .contact-form{
+        font-size: 1.1rem; /* Larger size for larger screens */
+    }
+}
+
+.design-container{ /* li bi alba l input */
+    
+    width: 40%;
+    height: 40px;
+    border: 2px  rgb(3, 37, 65) solid;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 150px;
+    background-color:  rgb(3, 37, 65);
+    
+}
+.submit-contact{ 
+   
+  border-style: none;
+
+
+}
+
+#name , #email ,#message{ /* inputs  */
+    color: white;
+    width: 90%;
+  height: 100%;
+  border: none;
+  margin-left: 10px;
+  height: 100%;
+  background-color:transparent;
+  border: 0px ;
+  font-size: larger;
+  font-family: "Source Sans Pro", "Arial", "sans-serif";
+  font-size: 1rem;}
+
+  .design-containerr{ /* hay bass lal text messg  */
+    
+    width: 90%;
+    height: 150px;
+    border: 2px  rgb(3, 37, 65) solid;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+ 
+    justify-content: space-between;
+    min-width: 150px;
+    background-color:  rgb(3, 37, 65);
+    
+}
+#submitB{
+    color: white;
+    background-color:  rgb(3, 37, 65);
+    border: 2px  rgb(3, 37, 65) solid;
+    border-radius: 50%;
+    width: 180px;
+    height:180px;
+    margin-top: 20px; /* Pushes the button to the bottom */
+    font-family: "Source Sans Pro", "Arial", "sans-serif";
+  font-size: 1rem;
+}
+
