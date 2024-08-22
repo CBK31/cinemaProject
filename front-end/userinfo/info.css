@@ -223,14 +223,20 @@ width: 33px;
 
 table {
     width: 100%;
-    border-collapse: collapse;
+background-color: rgb(3, 37, 65);
+color:white;
+     border-collapse: collapse;
+
+border-left: none;
+border-right: none;
+border-top: none;
+border-bottom: none;}
+ tr, td {
+
+    border: 1px solid rgb(255, 255, 255);
 }
 
-table, th, td {
-    border: 1px solid black;
-}
-
-th, td {
+ td {
     padding: 10px;
     text-align: left;
 }
