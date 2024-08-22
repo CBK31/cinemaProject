@@ -26,12 +26,11 @@ document
       );
 
       if (response.status == 400) {
-        alert(response.data.message); //  client-side error
-        if(){
-        }
+        alert(response.data.message); //  todo error div
       }
-      console.log("Success:", response); // Log the successful response
+      // todo 200 successful go to login page 
+      console.log("Success:", response);
     } catch (error) {
-      console.error("Error:", error); // Log any errors
+      console.error("Error:", error); 
     }
   });
