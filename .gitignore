@@ -14,3 +14,6 @@ back-end/package.json
 
 # Ignore package-lock.json in the back-end directory
 back-end/package-lock.json
+node_modules/
+package.json
+package-lock.json
