@@ -15,7 +15,6 @@ formInput.addEventListener("keyup", function (e) {
 
   function timingReady() {
     if (input.value != "" && e.timeStamp > timing + 1000) {
-      console.log("valid mf ");
       console.log(input.value);
       boll = true;
       // fetch reslt thru API
@@ -23,7 +22,6 @@ formInput.addEventListener("keyup", function (e) {
     } else {
       let mytimer = setTimeout(() => {
         if (boll) {
-          console.log("one time ");
           console.log(input.value);
           boll = false;
           // fetch result thru API
@@ -38,41 +36,6 @@ formInput.addEventListener("keyup", function (e) {
   timing = e.timeStamp;
 });
 
-/*
-method givin by chat gpt 
-
-let input = document.querySelector(".inputMovie");
-let myTimer;
-
-formInput.addEventListener('keyup', function (e) {
-    clearTimeout(myTimer);
-
-    if (input.value !== "" && e.timeStamp > timing + 1000) {
-        console.log("Valid input after delay");
-        console.log(input.value);
-        // Fetch result through API
-        fetchData(input.value);
-    } else {
-        myTimer = setTimeout(() => {
-            console.log("Valid input after 2 seconds");
-            console.log(input.value);
-            // Fetch result through API
-            fetchData(input.value);
-        }, 2000);
-    }
-
-    timing = e.timeStamp;
-});
-
-function fetchData(searchTerm) {
-    // Replace this with your actual API call logic
-    console.log("Fetching data for:", searchTerm);
-    // You can make your API request here
-}
-
-
-end of the method givin by chat gpt 
-*/
 function prepaireFetch(userinput) {
   //console.log("https://api.tvmaze.com/search/shows?q="+userinput.replace(" ","+"));
   myFetcher(
@@ -105,8 +68,6 @@ function resultDisplayer(rowss) {
       rowss[i].show.name,
       rowss[i].score
     );
-
-    //console.log("cbk the best : " + );
   }
 }
 
@@ -154,6 +115,6 @@ function fillMovieElement(
   // MovieNameParam.append();
   moviePicp.src = MoviePicParam;
   movieNp.innerText = MovieNameParam;
-  movieRatep.innerText = "★ :  " +(MovieRateparam * 100).toFixed(2) + " % ";
+  movieRatep.innerText = "★  " + (MovieRateparam * 100).toFixed(2) + " % ";
   watchListButtomp.innerText = "+";
 }

@@ -23,7 +23,7 @@ document
         alert(response.data.message); //  todo error div
       }
       // todo 200 successful go to index page
-
+      console.log(`user id : ${response._id}`); // to read
       console.log("Success:", response);
     } catch (error) {
       console.error("Error:", error);
