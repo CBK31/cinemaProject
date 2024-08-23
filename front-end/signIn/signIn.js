@@ -22,15 +22,12 @@ document
       let datamssg = document.getElementById("mssg");
       if (response.status == 400) {
         datamssg.textContent = response.data.message;
-        //  todo error div
-        /*  window.location.href = "signIn.html"; */
       } else {
-        console.log(`user id : ${response._id}`); // to read
-        console.log("Success:", response);
-        /*       console.log(response.data.message);
-      datamssg.textContent =response.data.message; */
-        sessionStorage.setItem("movieName", "Inception");
-        window.location.href = "../homePage/index.html";
+        sessionStorage.setItem("token", response.token);
+        console.log("////////////////////////////////////////////");
+        console.log( response.token);
+        console.log("////////////////////////////////////////////");
+         window.location.href = "../homePage/index.html"; 
       }
     } catch (error) {
       console.error("Error:", error);

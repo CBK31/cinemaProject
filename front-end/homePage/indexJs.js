@@ -119,5 +119,5 @@ function fillMovieElement(
   watchListButtomp.innerText = "+";
 }
 //hayde l session li bt jib l token 
-const movieName = sessionStorage.getItem('movieName');
-console.log(movieName);
+let tokenn = sessionStorage.getItem('token');
+console.log(tokenn);
