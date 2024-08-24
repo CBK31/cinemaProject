@@ -33,7 +33,7 @@ document
       } else if( response.status == 200) {
        
         console.log( response);
-    /*     sessionStorage.setItem("email", useremail); */
+         sessionStorage.setItem("email", useremail); 
          window.location.href = "/front-end/pass/newpass.html"; 
       }
     } catch (error) {

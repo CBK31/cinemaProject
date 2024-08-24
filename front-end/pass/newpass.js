@@ -19,7 +19,7 @@ document
  console.log(formData.get("pass") + " " + formData.get("newpass"));
  
 
-//  
+
     try {
       const response = await forwardRequest(
         data,
