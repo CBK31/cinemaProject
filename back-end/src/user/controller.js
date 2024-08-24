@@ -8,7 +8,7 @@ const {
   findUserById,
 } = require("./services");
 // import "express-session";
-// import { sendOTP, OTPsaver } from "../otp/otpServices";
+import { sendOTP, OTPsaver } from "../otp/otpServices";
 const jwt = require("jsonwebtoken");
 const userError = require("./error");
 
