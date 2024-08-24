@@ -1,5 +1,8 @@
 import { forwardRequest } from "../util/requestSender.js";
+
 let useremail = sessionStorage.getItem('email');
+console.log(useremail);
+
 document
   .getElementById("passForm")
   .addEventListener("submit", async function (event) {
@@ -8,8 +11,12 @@ document
     const formData = new FormData(event.target);
 
     const data = {
-      email: formData.get("email"),
+       email: sessionStorage.getItem('email') ,
+       newPassword : formData.get("pass"),
+       confirmPassword :formData.get("newpass"),
+ 
     };
+ console.log(formData.get("pass") + " " + formData.get("newpass"));
  
 
 //  
@@ -17,17 +24,21 @@ document
       const response = await forwardRequest(
         data,
         "POST",
-        "http://localhost:3000/user/forgetpassword"
+        "http://localhost:3000/user/resetpassword"
       );
-      
+
+       let datamssg =  document.getElementById("mssg");
   
       if (response.status == 400) {
-        console.log(response.data.message);
+
+      datamssg= response.data.message;
+
       } else {
-       
-        console.log( response);
+        datamssg= response.data.message;
+
+        console.log(response);
       
-         window.location.href = "/front-end/pass/verification.html"; 
+         window.location.href = "/front-end/homePage/index.html"; 
       }
     } catch (error) {
       console.error("Error:", error);

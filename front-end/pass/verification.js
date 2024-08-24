@@ -1,7 +1,7 @@
 import { forwardRequest } from "../util/requestSender.js";
 
 let useremail = sessionStorage.getItem('email');
-console.log(email);
+console.log(useremail);
 
 document
   .getElementById("verifyform")
@@ -22,20 +22,18 @@ document
       const response = await forwardRequest(
         data,
         "POST",
-        "http://localhost:3000/user/otp/verifyotp"
+        "http://localhost:3000/otp/verifyotp"
       );
       
-      let datamssg = document.getElementById("mssg");
-      datamssg.textContent = "Your OTP is valid for 5 minutes";
 
       if (response.status == 400) {
 
         console.log(response.data.message);
 
-      } else {
+      } else if( response.status == 200) {
        
         console.log( response);
-      
+    /*     sessionStorage.setItem("email", useremail); */
          window.location.href = "/front-end/pass/newpass.html"; 
       }
     } catch (error) {
