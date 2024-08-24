@@ -1,7 +1,7 @@
 const otpError = require("./otpError");
 const otpModel = require("./otpModel");
 const axios = require("axios");
-const { findUserByEmail } = require("../user/userService");
+const { findUserByEmail } = require("../user/services");
 
 const otpFinderByUserId = async (userId) => {
   return await otpModel.findOne({ userId: userId });

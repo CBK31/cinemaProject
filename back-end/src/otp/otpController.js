@@ -6,7 +6,7 @@ const {
   decrementLife,
 } = require("../otp/otpServices");
 const otpError = require("./otpError");
-const { findUserByEmail } = require("../user/userService");
+const { findUserByEmail } = require("../user/services");
 const userError = require("../user/userError");
 
 const verifyOTP = async (req, res) => {

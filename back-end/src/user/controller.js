@@ -8,7 +8,8 @@ const {
   findUserById,
 } = require("./services");
 // import "express-session";
-import { sendOTP, OTPsaver } from "../otp/otpServices";
+// import { sendOTP, OTPsaver } from "../otp/otpServices";
+const otpServices = require("../otp/otpServices");
 const jwt = require("jsonwebtoken");
 const userError = require("./error");
 
@@ -38,8 +39,8 @@ const forgetpassword = async (req, res) => {
     if (cc) {
       const myOTP = Math.floor(100000 + Math.random() * 900000).toString();
 
-      await OTPsaver(myOTP, email);
-      await sendOTP(email, myOTP);
+      await otpServices.OTPsaver(myOTP, email);
+      await otpServices.sendOTP(email, myOTP);
 
       res.status(200).json({ message: "OTP sent successfully" });
     } else {
