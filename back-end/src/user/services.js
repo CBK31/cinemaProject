@@ -53,21 +53,19 @@ const createUser = async (
 const logInService = async (req) => {
   const { email, password } = req.body;
   let userFinder = await findUserByEmail(email);
-
-  // const toSign: types.userInfoToSign = {
-  //   exp: Math.floor(Date.now() / 1000) + 60 * 20,
-  //   _id: userInfo._id,
-  //   dob: userInfo.dob,
-  // };
-
-  // const token = jwt.sign(JSON.stringify(toSign), process.env.JWT_SECRET_KEY!);
-  // return token;
-
+  console.log("user found : " + userFinder);
   if (userFinder) {
     let passChecker = await bcrypt.compare(password, userFinder.password);
 
     if (email == userFinder.email && passChecker) {
-      return userFinder;
+      const toSign = {
+        exp: Math.floor(Date.now() / 1000) + 60 * 20,
+        _id: userFinder._id,
+      };
+
+      const token = jwt.sign(JSON.stringify(toSign), "a_secret_key");
+
+      return { message: "User successfully signed in", userFinder, token };
     } else {
       const error = new Error(errorMessages.incorrectPass.message);
       error.statusCode = errorMessages.incorrectPass.statusCode;

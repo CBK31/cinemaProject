@@ -21,9 +21,11 @@ export const forwardRequest = async (body, requestMethod, serviceUrl) => {
       return {
         status: 500,
         data: {
-          message: "Internal Server Error - Unable to contact the service",
+          message:
+            "Internal Server Error - Unable to contact the service : " +
+            error.message,
         },
-      };
-    }
-  }
+      };
+    }
+  }
 };

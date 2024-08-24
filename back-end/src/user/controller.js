@@ -27,10 +27,10 @@ const login = async (req, res) => {
     const result = await logInService(req);
     res.status(200).send(result);
   } catch (error) {
-    res.status(error.statusCode).json({ message: error.message });
+    res.status(400).json({ message: error.message });
   }
 };
-
+// message: error.message
 const forgetpassword = async (req, res) => {
   try {
     const { email } = req.body;

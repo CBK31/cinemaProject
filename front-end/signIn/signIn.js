@@ -24,7 +24,7 @@ document
       }
       // todo 200 successful go to index page
       console.log(`user id : ${response._id}`); // to read
-      console.log("Success:", response);
+      console.log("responce from the back-end : ", response);
     } catch (error) {
       console.error("Error:", error);
     }
