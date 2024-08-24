@@ -106,8 +106,9 @@ p,#loginL{
     z-index: 2;
     background:rgb(3, 50, 100);
 }
-.mssg{
-    
+#mssg{
+    color:red;
+    font-weight: bold;
 }
 
 /* Media Queries */
