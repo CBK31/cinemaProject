@@ -158,6 +158,10 @@ width: 33px;
     height: 100%;
 }
 
+#mssg{
+    color:red;
+    font-weight: bold;
+}
 .contact-info h2 ,h4{
     margin-bottom: 20px; /* just for the try  */
     margin-top: 0;

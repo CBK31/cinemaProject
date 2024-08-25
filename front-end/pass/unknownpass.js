@@ -11,8 +11,6 @@ document
       email: formData.get("email"),
     };
  
-
-//  
     try {
       const response = await forwardRequest(
         data,
