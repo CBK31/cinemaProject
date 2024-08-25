@@ -2,7 +2,11 @@ let boll = true;
 let timing = 0;
 let formInput = document.querySelector(".formclass");
 let mainContainer = document.querySelector(".resultContainer");
+// import { forwardRequest } from "../util/requestSender";
 console.log(formInput);
+
+window.onload = prepaireFetch("veri");
+
 formInput.addEventListener("submit", function (d) {
   d.preventDefault();
 });
@@ -51,7 +55,8 @@ function myFetcher(request) {
     .then(function (results) {
       console.log("fetch good");
       console.log(results);
-      //console.log("cbk the best : " + results.length);
+
+      mainContainer.replaceChildren();
       resultDisplayer(results);
     })
     .catch(function (request) {
@@ -66,30 +71,43 @@ function resultDisplayer(rowss) {
     constructElement(
       rowss[i].show.image.medium,
       rowss[i].show.name,
-      rowss[i].score
+      rowss[i].score,
+      rowss[i].show.id,
+      rowss
     );
   }
 }
 
-function constructElement(dataMoviePic, dataMovieName, dataMovieRate) {
+function constructElement(
+  dataMoviePic,
+  dataMovieName,
+  dataMovieRate,
+  showId,
+  rowss
+) {
   let dataMoviePicParam = dataMoviePic;
   let dataMovieNameParam = dataMovieName;
   let dataMovieRateparam = dataMovieRate;
 
-  let mainshowCard = document.createElement("div");
+  let mainshowCard = document.createElement("a");
   let moviePic = document.createElement("img");
   let movieN = document.createElement("p");
   let movieRate = document.createElement("div");
-  let watchListButtom = document.createElement("a");
+  let watchListButtom = document.createElement("button");
 
   mainshowCard.append(moviePic, movieN, movieRate, watchListButtom);
 
   mainshowCard.classList.add("mainShowMovie");
+  // mainshowCard.setAttribute("href", "../signUp/signUp.html"); todo joya : change link
   moviePic.classList.add("innerMoviePic");
   movieN.classList.add("movieName");
   movieRate.classList.add("movieRating");
   watchListButtom.classList.add("addToWatchList");
 
+  watchListButtom.setAttribute("id", showId);
+  watchListButtom.addEventListener("click", function () {
+    addMovieToFavorite(showId, watchListButtom, rowss);
+  });
   mainContainer.appendChild(mainshowCard);
 
   fillMovieElement(
@@ -118,6 +136,88 @@ function fillMovieElement(
   movieRatep.innerText = "★  " + (MovieRateparam * 100).toFixed(2) + " % ";
   watchListButtomp.innerText = "+";
 }
-//hayde l session li bt jib l token 
-let tokenn = sessionStorage.getItem('token');
-console.log(tokenn);
+//hayde l session li bt jib l token
+let tokenn = sessionStorage.getItem("token");
+console.log("my toke : " + tokenn);
+
+async function addMovieToFavorite(showId, watchListButtom, rowss) {
+  if (!tokenn) {
+    window.location.href = "../signIn/signIn.html";
+  }
+  if (watchListButtom.innerText.includes("✔")) {
+    watchListButtom.innerText = "+";
+    try {
+      const response = await forwardRequest(
+        { movieId: showId },
+        "POST",
+        "http://localhost:3000/movie/delete"
+      );
+      if (response.status == 400) {
+        // todo joya
+      } else {
+        watchListButtom.innerText = "✔";
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  } else {
+    let myShow;
+    for (let i = 0; i < rowss.length; i++) {
+      if (rowss[i].show.id == showId) {
+        myShow = rowss[i];
+      }
+    }
+    watchListButtom.innerText = "✔";
+    try {
+      const response = await forwardRequest(
+        myShow,
+        "POST",
+        "http://localhost:3000/movie/add"
+      );
+      if (response.status == 400) {
+        // todo joya
+      } else {
+        watchListButtom.innerText = "✔";
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+}
+
+//
+//
+//
+//
+
+/////
+export const forwardRequest = async (body, requestMethod, serviceUrl) => {
+  try {
+    const response = await axios({
+      method: requestMethod,
+      url: serviceUrl,
+      data: body,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      timeout: 5000,
+    });
+    return response.data;
+  } catch (error) {
+    if (error.response) {
+      return {
+        status: error.response.status,
+        data: error.response.data,
+      };
+    } else {
+      return {
+        status: 500,
+        data: {
+          message:
+            "Internal Server Error - Unable to contact the service : " +
+            error.message,
+        },
+      };
+    }
+  }
+};
