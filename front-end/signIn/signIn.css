@@ -112,6 +112,7 @@ p,#loginL{
 }
 .mssg{
     color: red;
+    font-weight: bold;
 }
 /* Media Queries */
 @media (max-width: 768px) {

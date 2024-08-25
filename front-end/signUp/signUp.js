@@ -25,11 +25,12 @@ document
         "http://localhost:3000/user/signUp"
       );
 
+      let datamssg = document.getElementById("mssg");
       if (response.status == 400) {
-        alert(response.data.message); //  todo error div
+        datamssg.textContent = response.data.message;
+      } else {
+         window.location.href = "../signIn/signIn.html"; 
       }
-      // todo 200 successful go to login page 
-      console.log("Success:", response);
     } catch (error) {
       console.error("Error:", error); 
     }
