@@ -10,7 +10,7 @@ const findMovieById = async (movieId) => {
   return aMovie;
 };
 
-const deleteMovieById = async (movieId) => {
+const delMovieById = async (movieId) => {
   const aMovie = await movieModel.deleteOne({ movieId: movieId });
   return aMovie;
 };
@@ -50,37 +50,9 @@ const saveMovie = async (userId, movie) => {
   }
 };
 
-// const logInService = async (req) => {
-//   const { email, password } = req.body;
-//   let userFinder = await findUserByEmail(email);
-//   console.log("user found : " + userFinder);
-//   if (userFinder) {
-//     let passChecker = await bcrypt.compare(password, userFinder.password);
-
-//     if (email == userFinder.email && passChecker) {
-//       const toSign = {
-//         exp: Math.floor(Date.now() / 1000) + 60 * 20,
-//         _id: userFinder._id,
-//       };
-
-//       const token = jwt.sign(JSON.stringify(toSign), "a_secret_key");
-
-//       return { message: "User successfully signed in", userFinder, token };
-//     } else {
-//       const error = new Error(errorMessages.incorrectPass.message);
-//       error.statusCode = errorMessages.incorrectPass.statusCode;
-//       throw error;
-//     }
-//   } else {
-//     const error = new Error(errorMessages.userNotFound.message);
-//     error.statusCode = errorMessages.userNotFound.statusCode;
-//     throw error;
-//   }
-// };
-
 module.exports = {
   findMovieById,
   findUserFromToken,
   saveMovie,
-  deleteMovieById,
+  delMovieById,
 };

@@ -9,6 +9,7 @@ const {
   findUserFromToken,
   findMovieById,
   saveMovie,
+  delMovieById,
 } = require("./services");
 // import "express-session";
 // import { sendOTP, OTPsaver } from "../otp/otpServices";
@@ -53,6 +54,29 @@ const addMovie = async (req, res) => {
   }
 };
 
+const getMovieById = async (req, res) => {
+  try {
+    const { movieId } = req.body;
+    const movieFinder = findMovieById(movieId);
+  } catch (error) {
+    res
+      .status(400)
+      .json({ message: "error while getting the movie : " + error });
+  }
+};
+
+const deleteMovieById = async (req, res) => {
+  try {
+    const { movieId } = req.body;
+    return await delMovieById(movieId);
+  } catch (error) {
+    res
+      .status(400)
+      .json({ message: "error while getting the movie : " + error });
+  }
+};
 module.exports = {
   addMovie,
+  getMovieById,
+  deleteMovieById,
 };
