@@ -53,7 +53,7 @@ const verifyOTP = async (req, res) => {
         .json({ message: userError.userNotFound.message });
     }
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(400).json({ message: " otp invalid" });
   }
 };
 
