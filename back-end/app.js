@@ -7,6 +7,7 @@ const { inspect } = require("util");
 
 const userRoutes = require("./src/user/routes");
 const otpRoutes = require("./src/otp/otpRoutes");
+const movieRoutes = require("./src/movie/routes");
 mongoose
   .connect("mongodb://localhost:27017/cinemaDB")
   .then(() => {
@@ -41,6 +42,8 @@ app.use("", (req, res, next) => {
 
 app.use("/user", userRoutes);
 app.use("/otp", otpRoutes);
+app.use("/movie", movieRoutes);
+
 app.use("*", (req, res) => {
   res.status(400).json({ message: "path not found" });
 });

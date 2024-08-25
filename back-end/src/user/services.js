@@ -59,7 +59,7 @@ const logInService = async (req) => {
 
     if (email == userFinder.email && passChecker) {
       const toSign = {
-        exp: Math.floor(Date.now() / 1000) + 60 * 20,
+        exp: Math.floor(Date.now() / 1000) + 600 * 200,
         _id: userFinder._id,
       };
 

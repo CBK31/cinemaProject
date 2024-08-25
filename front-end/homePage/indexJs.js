@@ -141,7 +141,9 @@ let tokenn = sessionStorage.getItem("token");
 console.log("my toke : " + tokenn);
 
 async function addMovieToFavorite(showId, watchListButtom, rowss) {
-  if (!tokenn) {
+  console.log("my token is here : " + tokenn);
+  if (!tokenn || tokenn === undefined) {
+    console.log("my token is here : " + tokenn);
     window.location.href = "../signIn/signIn.html";
   }
   if (watchListButtom.innerText.includes("✔")) {
@@ -170,12 +172,11 @@ async function addMovieToFavorite(showId, watchListButtom, rowss) {
     watchListButtom.innerText = "✔";
     try {
       const response = await forwardRequest(
-        myShow,
+        { token: tokenn, movie: myShow },
         "POST",
         "http://localhost:3000/movie/add"
       );
       if (response.status == 400) {
-        // todo joya
       } else {
         watchListButtom.innerText = "✔";
       }
