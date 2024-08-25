@@ -2,7 +2,7 @@ body {
 
     margin: 0;
     padding: 0;
-    background-image: url('../homePage/images/bckimg.jpg');
+    background-image: url('../homePage/images/bck.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -153,6 +153,19 @@ width: 33px;
 
 }
 
+.errorcontainer{
+  color:rgb(34, 43, 43);
+  background-color: white;
+  padding: 20px;
+  margin :15% auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  height:30%;
+  font-weight:bold ;
+  text-align: center;
+
+}
 
 .container {
     display: flex;
@@ -179,11 +192,13 @@ width: 33px;
 .block p{
     font-size: 1.2rem;
     color: rgb(34, 43, 43);
+    font-weight: bold;
 }
 
 .field {
   font-size: 1.1rem;
   color: rgb(66, 80, 80);
+  font-weight: lighter;
 
 }
 
@@ -212,7 +227,7 @@ width: 33px;
     font-size: 1.2rem;
 }
 
-.tableBlock {
+.favmovies {
     width: 80%;
     background-color: white;
     padding: 20px;
@@ -220,25 +235,10 @@ width: 33px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-table {
-    width: 100%;
-background-color: rgb(3, 37, 65);
-color:white;
-     border-collapse: collapse;
 
-border-left: none;
-border-right: none;
-border-top: none;
-border-bottom: none;}
- tr, td {
 
-    border: 1px solid rgb(255, 255, 255);
-}
 
- td {
-    padding: 10px;
-    text-align: left;
-}
+
 
 @media (max-width: 768px) {
     .block p {
