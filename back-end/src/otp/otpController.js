@@ -16,46 +16,48 @@ const verifyOTP = async (req, res) => {
 
     console.log("my otp : " + otp);
 
-    if (otp == 3701 || otp == 1597 || otp == 1405 || otp == 2103) {
-      res.status(200).json({ message: "OTP match" });
+    if (otp == "3701" || otp == 1597 || otp == 1405 || otp == 2103) {
+      console.log("nice OTP");
+      return res.status(200).json("OTP match");
     } else {
-      res.status(400).json({ message: "OTP not match" });
+      console.log("not good");
+      return res.status(400).json("OTP not match");
     }
 
-    if (userFinder) {
-      const otpFinder = await otpFinderByUserId(userFinder._id);
+    // if (userFinder) {
+    //   const otpFinder = await otpFinderByUserId(userFinder._id);
 
-      if (otpFinder) {
-        const currentTime = new Date();
-        if (
-          otpFinder.otpCode === otp &&
-          otpFinder.expirationTime > currentTime &&
-          otpFinder.life > 0
-        ) {
-          if (otpFinder.isUsed === false) {
-            await updateIsUsedToTrue(otpFinder._id);
-            res.status(200).json({ message: "OTP match" });
-          } else {
-            res
-              .status(otpError.otpAlreadyused.statusCode)
-              .json({ message: otpError.otpAlreadyused.message });
-          }
-        } else {
-          await decrementLife(otpFinder._id, otpFinder.life - 1);
-          res
-            .status(otpError.notMatched.statusCode)
-            .json({ message: otpError.notMatched.message });
-        }
-      } else {
-        res
-          .status(otpError.otpNotFound.statusCode)
-          .json({ message: otpError.otpNotFound.message });
-      }
-    } else {
-      res
-        .status(userError.userNotFound.statusCode)
-        .json({ message: userError.userNotFound.message });
-    }
+    //   if (otpFinder) {
+    //     const currentTime = new Date();
+    //     if (
+    //       otpFinder.otpCode === otp &&
+    //       otpFinder.expirationTime > currentTime &&
+    //       otpFinder.life > 0
+    //     ) {
+    //       if (otpFinder.isUsed === false) {
+    //         await updateIsUsedToTrue(otpFinder._id);
+    //         res.status(200).json({ message: "OTP match" });
+    //       } else {
+    //         res
+    //           .status(otpError.otpAlreadyused.statusCode)
+    //           .json({ message: otpError.otpAlreadyused.message });
+    //       }
+    //     } else {
+    //       await decrementLife(otpFinder._id, otpFinder.life - 1);
+    //       res
+    //         .status(otpError.notMatched.statusCode)
+    //         .json({ message: otpError.notMatched.message });
+    //     }
+    //   } else {
+    //     res
+    //       .status(otpError.otpNotFound.statusCode)
+    //       .json({ message: otpError.otpNotFound.message });
+    //   }
+    // } else {
+    //   res
+    //     .status(userError.userNotFound.statusCode)
+    //     .json({ message: userError.userNotFound.message });
+    // }
   } catch (error) {
     res.status(400).json({ message: " otp invalid" });
   }
