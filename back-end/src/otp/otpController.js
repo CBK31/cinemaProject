@@ -7,7 +7,7 @@ const {
 } = require("../otp/otpServices");
 const otpError = require("./otpError");
 const { findUserByEmail } = require("../user/services");
-const userError = require("../user/userError");
+const userError = require("../user/error");
 
 const verifyOTP = async (req, res) => {
   try {
