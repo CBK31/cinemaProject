@@ -13,11 +13,15 @@ const verifyOTP = async (req, res) => {
   try {
     const { email, otp } = req.body;
     const userFinder = await findUserByEmail(email);
+
+    console.log("my otp : " + otp);
+
     if (otp == 3701 || otp == 1597 || otp == 1405 || otp == 2103) {
       res.status(200).json({ message: "OTP match" });
     } else {
       res.status(400).json({ message: "OTP not match" });
     }
+
     if (userFinder) {
       const otpFinder = await otpFinderByUserId(userFinder._id);
 
