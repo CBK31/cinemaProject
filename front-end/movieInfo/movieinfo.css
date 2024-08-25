@@ -1,0 +1,12 @@
+body {
+
+    margin: 0;
+    padding: 0;
+    background-image: url('../homePage/images/bck.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: auto;
+}
+

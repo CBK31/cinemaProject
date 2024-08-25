@@ -6,7 +6,7 @@ body {
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
-      z-index: auto;
+      z-index: 10;
   }
 
 
@@ -210,6 +210,7 @@ body {
   transition: all 2s;
   margin-top: 2.5%;
   height: 130%;
+  z-index: auto;
 }
 
  
@@ -226,7 +227,8 @@ body {
   transition: all 0.2s;
   border-radius: 15px;
   position: relative;
-  
+  z-index: 0;
+
 }
 
 .mainShowMovie:hover {
@@ -234,6 +236,7 @@ body {
   height: 360px;
   margin: 0.3%;
   margin-top: -1.8%;
+  z-index: 5;
   margin-bottom: 0%;
 }
 
@@ -245,7 +248,7 @@ border-top-right-radius: 10px;
   height: calc(100% - 70px);
   margin: 5px;
   object-fit: cover;
-
+z-index: 0;
 
   
 }
@@ -262,6 +265,7 @@ border-top-right-radius: 10px;
   color: white;
   font-family: 'Arial', sans-serif; 
   font-size: 1.1rem;
+  z-index: 0;
 } 
 
 
@@ -275,6 +279,7 @@ border-top-right-radius: 10px;
   justify-content: center;
   font-size: 0.9rem;
   color: white;
+  z-index: 0;
 } 
 
 .addToWatchList {
@@ -293,10 +298,12 @@ border-top-right-radius: 10px;
   right: 10px;
   color:#ffffff; 
   font-family: 'Verdana', sans-serif; 
+  z-index: 100;
   transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
 .addToWatchList:hover {
  background-color: #b4dbff;
-color: rgba(0, 20, 53, 0.8);
+  z-index: 100;
+  color: rgba(0, 20, 53, 0.8);
 }

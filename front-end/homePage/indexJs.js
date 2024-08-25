@@ -97,8 +97,9 @@ function constructElement(
 
   mainshowCard.append(moviePic, movieN, movieRate, watchListButtom);
 
+
   mainshowCard.classList.add("mainShowMovie");
-  // mainshowCard.setAttribute("href", "../signUp/signUp.html"); todo joya : change link
+   mainshowCard.setAttribute("href", "../signUp/signUp.html");
   moviePic.classList.add("innerMoviePic");
   movieN.classList.add("movieName");
   movieRate.classList.add("movieRating");
