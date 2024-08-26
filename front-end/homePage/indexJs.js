@@ -97,17 +97,19 @@ function constructElement(
 
   mainshowCard.append(moviePic, movieN, movieRate, watchListButtom);
 
-
   mainshowCard.classList.add("mainShowMovie");
-   mainshowCard.setAttribute("href", "../signUp/signUp.html");
+  mainshowCard.addEventListener("click", function () {
+    showMovieDetails(showId, rowss);
+  });
+  //  mainshowCard.setAttribute("href", "../signUp/signUp.html");
   moviePic.classList.add("innerMoviePic");
   movieN.classList.add("movieName");
   movieRate.classList.add("movieRating");
   watchListButtom.classList.add("addToWatchList");
 
   watchListButtom.setAttribute("id", showId);
-  watchListButtom.addEventListener("click", function () {
-    addMovieToFavorite(showId, watchListButtom, rowss);
+  watchListButtom.addEventListener("click", async function () {
+    await addMovieToFavorite(showId, watchListButtom, rowss);
   });
   mainContainer.appendChild(mainshowCard);
 
@@ -185,6 +187,21 @@ async function addMovieToFavorite(showId, watchListButtom, rowss) {
       console.error("Error:", error);
     }
   }
+}
+
+async function showMovieDetails(movieId, rowss) {
+  let myShow;
+  for (let i = 0; i < rowss.length; i++) {
+    if (rowss[i].show.id == movieId) {
+      myShow = rowss[i];
+    }
+  }
+  console.log(myShow);
+  sessionStorage.setItem("movie", JSON.stringify(myShow));
+  let moviee = sessionStorage.getItem("movie");
+
+  // mainshowCard.setAttribute("href", "../signUp/signUp.html");
+  window.location.href = "../movieInfo/movieinfo.html";
 }
 
 //
