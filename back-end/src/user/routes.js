@@ -8,4 +8,6 @@ myRoutes.use("/login", userController.login);
 myRoutes.use("/forgetpassword", userController.forgetpassword);
 myRoutes.use("/resetpassword", userController.resetpassword);
 myRoutes.use("/changepassword", userController.changePassword);
+myRoutes.use("/getinfo", userController.getUserInfo); // todo
+
 module.exports = myRoutes;

@@ -50,9 +50,20 @@ const saveMovie = async (userId, movie) => {
   }
 };
 
+const getAllMovieByUserId = async (userId) => {
+  try {
+    return await movieModel.find({ userId: userId });
+  } catch (error) {
+    res
+      .status(400)
+      .json({ message: "error while getting the movies : " + error });
+  }
+};
+
 module.exports = {
   findMovieById,
   findUserFromToken,
   saveMovie,
   delMovieById,
+  getAllMovieByUserId,
 };

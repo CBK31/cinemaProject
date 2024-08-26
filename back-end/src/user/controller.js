@@ -9,6 +9,7 @@ const {
   findUserFromToken,
   findUserById,
 } = require("./services");
+const { getAllMovieByUserId } = require("../movie/services");
 // import "express-session";
 // import { sendOTP, OTPsaver } from "../otp/otpServices";
 const otpServices = require("../otp/otpServices");
@@ -97,11 +98,21 @@ const changePassword = async (req, res) => {
   }
 };
 
-// export { signUp, login, forgetpassword, resetpassword, changePassword };
+const getUserInfo = async (req, res) => {
+  const token = req.body.token;
+  console.log("my tokkkeeenn : " + token);
+  const decoded = jwt.verify(token, "a_secret_key");
+  const userId = decoded._id;
+  const movieInfo = await getAllMovieByUserId(userId);
+  const userInfo = await findUserById(userId);
+  res.status(200).json({ userInfo: userInfo, moviesInfo: movieInfo });
+}; // todo
+
 module.exports = {
   signUp,
   login,
   forgetpassword,
   resetpassword,
   changePassword,
+  getUserInfo,
 };

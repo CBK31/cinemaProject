@@ -201,7 +201,7 @@ async function showMovieDetails(movieId, rowss) {
   let moviee = sessionStorage.getItem("movie");
 
   // mainshowCard.setAttribute("href", "../signUp/signUp.html");
-  window.location.href = "../movieInfo/movieinfo.html";
+  // window.location.href = "../movieInfo/movieinfo.html";
 }
 
 //
