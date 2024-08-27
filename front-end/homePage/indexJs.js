@@ -101,7 +101,10 @@ function constructElement(
   mainshowCard.addEventListener("click", function () {
     showMovieDetails(showId, rowss);
   });
-  //  mainshowCard.setAttribute("href", "../signUp/signUp.html");
+  mainshowCard.addEventListener("click", function () {
+    window.location.href = "../movieInfo/movieInfo.html";
+  });// changed
+  
   moviePic.classList.add("innerMoviePic");
   movieN.classList.add("movieName");
   movieRate.classList.add("movieRating");
@@ -113,6 +116,11 @@ function constructElement(
   });
   mainContainer.appendChild(mainshowCard);
 
+  watchListButtom.addEventListener("click", async function (e) {
+    e.stopPropagation();
+    await addMovieToFavorite(showId, watchListButtom, rowss);
+  });
+  
   fillMovieElement(
     dataMoviePicParam,
     dataMovieNameParam,
@@ -122,6 +130,7 @@ function constructElement(
     movieRate,
     watchListButtom
   );
+
 }
 
 function fillMovieElement(
@@ -149,20 +158,21 @@ async function addMovieToFavorite(showId, watchListButtom, rowss) {
   if (!tokenn || tokenn === undefined) {
     console.log("my token is here : " + tokenn);
     window.location.href = "../signIn/signIn.html";
-  }//-
-  if (watchListButtom.innerText.includes("-")) {
-    watchListButtom.innerText = "+";
+    return; //changed
+  }
+
+  if (watchListButtom.innerText.includes("+")) {
+    watchListButtom.innerText = "-";
     try {
       const response = await forwardRequest(
-        { movieId: showId },
+        { movieId: showId,
+          token:tokenn,
+        
+         },
         "POST",
         "http://localhost:3000/movie/delete"
       );
-      if (response.status == 400) {
-        // todo joya
-      } else {
-        watchListButtom.innerText = "-";
-      }
+      
     } catch (error) {
       console.error("Error:", error);
     }
@@ -173,7 +183,7 @@ async function addMovieToFavorite(showId, watchListButtom, rowss) {
         myShow = rowss[i];
       }
     }
-    watchListButtom.innerText = "-";
+    watchListButtom.innerText = "+";
     try {
       const response = await forwardRequest(
         { token: tokenn, movie: myShow },

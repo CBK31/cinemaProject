@@ -62,16 +62,32 @@ const getAllMovieByUserId = async (userId) => {
       .json({ message: "error while getting the movies : " + error });
   }
 };
-
+//todo charbel
 const delMovieByIdAndUserId = async (userId, movieId) => {
-  const userFinder = await findUserById(userId);
-  if (userFinder) {
-    return await movieModel.deleteOne({ userId: userId, movieId: movieId });
-  } else {
-    const error = new Error("user not found");
-    error.statusCode = 400;
-    throw error;
-  }
+   
+   console.log("my useerrr id : " +userId);
+   console.log("my movviiiieee id : "+movieId);
+    const result = await movieModel.aggregate([
+      {
+          $match: {
+              userId: userId,
+              movieId: movieId
+          }
+      },
+      {
+          $limit: 1 // Limit to one document if there could be multiple matches
+      },
+      {
+          $project: {
+              _id: 1 // Only project the _id field, needed to delete the document
+          }
+      }
+]);
+ console.log("my resulttt :::"+result);
+ return await movieModel.findOneAndDelete({ userId: userId, movieId: movieId });
+
+
+
 };
 module.exports = {
   findMovieById,

@@ -69,10 +69,12 @@ const getMovieById = async (req, res) => {
 const deleteMovieById = async (req, res) => {
   try {
     const user = await findUserFromToken(req);
-    const { movie } = req.body;
+    const { movieId } = req.body;
 
     if (user) {
-      await delMovieByIdAndUserId(user._id, movie);
+    const  s =   await delMovieByIdAndUserId(user._id, movieId);
+    console.log(s);
+    console.log(s.length);
       res.status(200).json({ message: "movie deleted successfully" });
     } else {
       res.status(401).json({ message: "user not found" });

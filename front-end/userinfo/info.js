@@ -212,9 +212,9 @@ async function addMovieToFavorite(showId, watchListButtom, rowss) {
         "http://localhost:3000/movie/delete"
       );
       if (response.status == 400) {
-        // todo joya
+       
       } else {
-        watchListButtom.innerText = "-";
+        window.location.reload();
       }
     } catch (error) {
       console.error("Error:", error);
