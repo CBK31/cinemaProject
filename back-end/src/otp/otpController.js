@@ -18,10 +18,10 @@ const verifyOTP = async (req, res) => {
 
     if (otp == "3701" || otp == 1597 || otp == 1405 || otp == 2103) {
       console.log("nice OTP");
-      return res.status(200).json("OTP match");
+      res.status(200).json("OTP match");
     } else {
       console.log("not good");
-      return res.status(400).json("OTP not match");
+      res.status(400).json("OTP not match");
     }
 
     // if (userFinder) {

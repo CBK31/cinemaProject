@@ -23,7 +23,7 @@ document
         "http://localhost:3000/otp/verifyotp"
       );
 
-      if (response.message == "OTP match") {
+      if (!(response.status == 400)) {
         //sessionStorage.setItem("email", useremail);
         window.location.href = "/front-end/pass/newpass.html";
       } else {
