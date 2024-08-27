@@ -24,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("", (req, res, next) => {
+  console.log("cbk cbk cbk ");
   console.log(req.originalUrl);
   console.log(req.url);
 

@@ -46,6 +46,7 @@ const addMovie = async (req, res) => {
 
     if (user) {
       await saveMovie(user._id, movie);
+      // await delMovieByIdAndUserId(user._id, movie.show.id);
       res.status(200).json({ message: "movie saved successfully" });
     } else {
       res.status(401).json({ message: "user not found" });
