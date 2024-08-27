@@ -10,6 +10,7 @@ const {
   findMovieById,
   saveMovie,
   delMovieById,
+  delMovieByIdAndUserId,
 } = require("./services");
 // import "express-session";
 // import { sendOTP, OTPsaver } from "../otp/otpServices";
@@ -67,8 +68,16 @@ const getMovieById = async (req, res) => {
 
 const deleteMovieById = async (req, res) => {
   try {
-    const { movieId } = req.body;
-    return await delMovieById(movieId);
+    const user = await findUserFromToken(req);
+    const { movie } = req.body;
+
+    if (user) {
+      await delMovieByIdAndUserId(user._id, movie);
+      res.status(200).json({ message: "movie deleted successfully" });
+    } else {
+      res.status(401).json({ message: "user not found" });
+    }
+    // return await delMovieById(movieId);
   } catch (error) {
     res
       .status(400)

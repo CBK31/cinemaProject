@@ -9,7 +9,10 @@ const findMovieById = async (movieId) => {
   const aMovie = await movieModel.findOne({ movieId: movieId });
   return aMovie;
 };
-
+const findMovieByIdAndUserId = async (movieId, userId) => {
+  const aMovie = await movieModel.findOne({ userId: userId, movieId: movieId });
+  return aMovie;
+};
 const delMovieById = async (movieId) => {
   const aMovie = await movieModel.deleteOne({ movieId: movieId });
   return aMovie;
@@ -31,7 +34,7 @@ const findUserFromToken = async (req) => {
 
 const saveMovie = async (userId, movie) => {
   console.log("my movie detaile before saving : ");
-  const movieFinder = await findMovieById(movie.show.id);
+  const movieFinder = await findMovieByIdAndUserId(movie.show.id, userId);
   if (!movieFinder) {
     await new movieModel({
       userId: userId,
@@ -60,10 +63,21 @@ const getAllMovieByUserId = async (userId) => {
   }
 };
 
+const delMovieByIdAndUserId = async (userId, movieId) => {
+  const userFinder = await findUserById(userId);
+  if (userFinder) {
+    return await movieModel.deleteOne({ userId: userId, movieId: movieId });
+  } else {
+    const error = new Error("user not found");
+    error.statusCode = 400;
+    throw error;
+  }
+};
 module.exports = {
   findMovieById,
   findUserFromToken,
   saveMovie,
   delMovieById,
   getAllMovieByUserId,
+  delMovieByIdAndUserId,
 };
