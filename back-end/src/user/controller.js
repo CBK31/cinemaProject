@@ -1,6 +1,6 @@
 const { Request, Response } = require("express");
 const { inspect } = require("util");
-
+const messageModel = require("./messageModel");
 const {
   findUserByEmail,
   createUser,
@@ -106,9 +106,22 @@ const getUserInfo = async (req, res) => {
   const movieInfo = await getAllMovieByUserId(userId);
   const userInfo = await findUserById(userId);
   res.status(200).json({ userInfo: userInfo, moviesInfo: movieInfo });
-}; // todo
+};
+
+const createComment = async (req, res) => {
+  const { firstName, email, message } = req.body;
+  console.log("my message is : " + message);
+  await new messageModel({
+    firstName: firstName,
+    email: email,
+    message: message,
+  }).save();
+
+  res.status(200).json({ message: "comment saved " });
+};
 
 module.exports = {
+  createComment,
   signUp,
   login,
   forgetpassword,

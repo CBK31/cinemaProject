@@ -8,6 +8,7 @@ myRoutes.use("/login", userController.login);
 myRoutes.use("/forgetpassword", userController.forgetpassword);
 myRoutes.use("/resetpassword", userController.resetpassword);
 myRoutes.use("/changepassword", userController.changePassword);
-myRoutes.use("/getinfo", userController.getUserInfo); // todo
+myRoutes.use("/getinfo", userController.getUserInfo);
+myRoutes.use("/contact", userController.createComment);
 
 module.exports = myRoutes;
