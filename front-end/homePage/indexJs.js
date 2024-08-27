@@ -3,7 +3,6 @@ let boll = true;
 let timing = 0;
 let formInput = document.querySelector(".formclass");
 let mainContainer = document.querySelector(".resultContainer");
-// import { forwardRequest } from "../util/requestSender";
 console.log(formInput);
 
 window.onload = prepaireFetch("veri");
@@ -15,21 +14,18 @@ formInput.addEventListener("submit", function (d) {
 let input = document.querySelector(".inputMovie");
 
 formInput.addEventListener("keyup", function (e) {
-  //   console.log(input.value);
   timingReady();
 
   function timingReady() {
     if (input.value != "" && e.timeStamp > timing + 1000) {
       console.log(input.value);
       boll = true;
-      // fetch reslt thru API
-      // prepaireFetch(input.value);
+    
     } else {
       let mytimer = setTimeout(() => {
         if (boll) {
           console.log(input.value);
           boll = false;
-          // fetch result thru API
           prepaireFetch(input.value);
         } else {
           clearTimeout(mytimer);
@@ -42,7 +38,6 @@ formInput.addEventListener("keyup", function (e) {
 });
 
 function prepaireFetch(userinput) {
-  //console.log("https://api.tvmaze.com/search/shows?q="+userinput.replace(" ","+"));
   myFetcher(
     "https://api.tvmaze.com/search/shows?q=" + userinput.replace(" ", "+")
   );
@@ -100,6 +95,7 @@ function constructElement(
   mainshowCard.classList.add("mainShowMovie");
   mainshowCard.addEventListener("click", function () {
     showMovieDetails(showId, rowss);
+    window.location.href = "../movieinfo/movieinfo.html";
   });
 
   moviePic.classList.add("innerMoviePic");
@@ -108,8 +104,10 @@ function constructElement(
   watchListButtom.classList.add("addToWatchList");
 
   watchListButtom.setAttribute("id", showId);
-  watchListButtom.addEventListener("click", async function () {
+  watchListButtom.addEventListener("click", async function (e) {
+   e.stopPropagation(); 
     await addMovieToFavorite(showId, watchListButtom, rowss);
+   
   });
   mainContainer.appendChild(mainshowCard);
 
@@ -133,21 +131,21 @@ function fillMovieElement(
   movieRatep,
   watchListButtomp
 ) {
-  // MovieNameParam.append();
+
   moviePicp.src = MoviePicParam;
   movieNp.innerText = MovieNameParam;
   movieRatep.innerText = "★  " + (MovieRateparam * 100).toFixed(2) + " % ";
   watchListButtomp.innerText = "+";
 }
 
-//hayde l session li bt jib l token
+
 let tokenn = sessionStorage.getItem("token");
-console.log("my toke : " + tokenn);
+
 
 async function addMovieToFavorite(showId, watchListButtom, rowss) {
   console.log("my token is here : " + tokenn);
   if (!tokenn || tokenn === undefined) {
-    console.log("my token is here : " + tokenn);
+    console.log("my token is hereeeee : " + tokenn);
     window.location.href = "../signIn/signIn.html";
     return; }
     
@@ -162,9 +160,10 @@ async function addMovieToFavorite(showId, watchListButtom, rowss) {
         "http://localhost:3000/movie/delete"
       );
       if (response.status == 400) {
-        // todo joya
+       console.log("error deleting");
       } else {
-        watchListButtom.innerText = "-";
+        watchListButtom.innerText = "+"; //-
+        console.log("successful deleting");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -176,7 +175,7 @@ async function addMovieToFavorite(showId, watchListButtom, rowss) {
         myShow = rowss[i];
       }
     }
-    watchListButtom.innerText = "-";
+    watchListButtom.innerText = "+";//-
     try {
       const response = await forwardRequest(
         { token: tokenn, movie: myShow },
@@ -184,8 +183,10 @@ async function addMovieToFavorite(showId, watchListButtom, rowss) {
         "http://localhost:3000/movie/add"
       );
       if (response.status == 400) {
+        console.log("error adding");
       } else {
         watchListButtom.innerText = "-";
+        console.log("successful adding");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -203,17 +204,10 @@ async function showMovieDetails(movieId, rowss) {
   console.log(myShow);
   sessionStorage.setItem("movie", JSON.stringify(myShow));
   let moviee = sessionStorage.getItem("movie");
-
-  // mainshowCard.setAttribute("href", "../signUp/signUp.html");
-  // window.location.href = "../movieInfo/movieinfo.html";
 }
+  
 
-//
-//
-//
-//
 
-/////
 export const forwardRequest = async (body, requestMethod, serviceUrl) => {
   try {
     const response = await axios({
@@ -242,5 +236,4 @@ export const forwardRequest = async (body, requestMethod, serviceUrl) => {
         },
       };
     }
-  }
-};
+  }}
