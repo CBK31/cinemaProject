@@ -10,7 +10,7 @@ const findMovieById = async (movieId) => {
   return aMovie;
 };
 const findMovieByIdAndUserId = async (movieId, userId) => {
-  const aMovie = await movieModel.findOne({ userId: userId, movieId: movieId });
+  const aMovie = await movieModel.find({ userId: userId, movieId: movieId });
   return aMovie;
 };
 const delMovieById = async (movieId) => {
@@ -35,6 +35,7 @@ const findUserFromToken = async (req) => {
 const saveMovie = async (userId, movie) => {
   console.log("my movie detaile before saving : ");
   const movieFinder = await findMovieByIdAndUserId(movie.show.id, userId);
+  console.log("from services movieFinder : " + movieFinder);
   if (!movieFinder) {
     await new movieModel({
       userId: userId,
@@ -64,30 +65,29 @@ const getAllMovieByUserId = async (userId) => {
 };
 //todo charbel
 const delMovieByIdAndUserId = async (userId, movieId) => {
-   
-   console.log("my useerrr id : " +userId);
-   console.log("my movviiiieee id : "+movieId);
-    const result = await movieModel.aggregate([
-      {
-          $match: {
-              userId: userId,
-              movieId: movieId
-          }
+  console.log("my useerrr id : " + userId);
+  console.log("my movviiiieee id : " + movieId);
+  const result = await movieModel.aggregate([
+    {
+      $match: {
+        userId: userId,
+        movieId: movieId,
       },
-      {
-          $limit: 1 // Limit to one document if there could be multiple matches
+    },
+    {
+      $limit: 1, // Limit to one document if there could be multiple matches
+    },
+    {
+      $project: {
+        _id: 1, // Only project the _id field, needed to delete the document
       },
-      {
-          $project: {
-              _id: 1 // Only project the _id field, needed to delete the document
-          }
-      }
-]);
- console.log("my resulttt :::"+result);
- return await movieModel.findOneAndDelete({ userId: userId, movieId: movieId });
-
-
-
+    },
+  ]);
+  console.log("my resulttt :::" + result);
+  return await movieModel.findOneAndDelete({
+    userId: userId,
+    movieId: movieId,
+  });
 };
 module.exports = {
   findMovieById,
