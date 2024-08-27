@@ -25,7 +25,7 @@ document
        
         console.log( response);
         sessionStorage.setItem("email", formData.get("email"));
-       
+       console.log(formData.get("email"));
          window.location.href = "/front-end/pass/verification.html"; 
       }
     } catch (error) {

@@ -31,13 +31,10 @@ document
   
       if (response.status == 400) {
 
-      datamssg= response.data.message;
-
+      console.log(response.data.message);
+      datamssg= "your passwords do not match!";
       } else {
-        datamssg= response.data.message;
-
-        console.log(response);
-      
+        datamssg= "password changed succesfully!";
          window.location.href = "/front-end/homePage/index.html"; 
       }
     } catch (error) {
