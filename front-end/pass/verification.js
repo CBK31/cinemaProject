@@ -24,10 +24,10 @@ document
       );
 
       if (!(response.status == 400)) {
-        //sessionStorage.setItem("email", useremail);
+        
         window.location.href = "/front-end/pass/newpass.html";
       } else {
-        // todo show error message
+        
       }
     } catch (error) {
       console.error("Error:", error);

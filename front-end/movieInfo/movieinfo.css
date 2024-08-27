@@ -77,57 +77,57 @@ body {
     width: 33px;
   }
   
-  /* Style for the container that holds both image and info */
+  
   .movie-container {
     display: flex;
-    flex-direction: column; /* Stack content vertically */
+    flex-direction: column; 
     align-items: center;
     width: 90%;
-    margin: 20px auto; /* Center content and add margin */
+    margin: 20px auto; 
   }
   
-  /* Style for movie content to arrange image and info side by side */
+  
   .movie-content {
     height:500px;
-    display: flex; /* Side-by-side layout */
-    width: 100%; /* Full width */
-    max-width: 1200px; /* Optional max width for the content */
-    /*background-color: #fff;  White background */
+    display: flex; 
+    width: 100%;
+    max-width: 1200px; 
+    
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Ensure children stay inside */
-    margin-bottom: 20px; /* Margin below movie content */
+    overflow: hidden; 
+    margin-bottom: 20px; 
   }
   
-  /* Style for the movie image */
+  
   .movie-image {
-    flex: 1; /* Take up equal space as info */
-    margin: 20px; /* Add margin around the image */
+    flex: 1;
+    margin: 20px; 
   }
   
   .movie-image img {
-    width: 75%; /* Full width inside the container */
-    height: 100%; /* Keep aspect ratio */
+    width: 75%; 
+    height: 100%;
     border-radius: 15px;
   }
   
-  /* Style for movie info */
+
   .movie-info {
-    flex: 1; /* Take up equal space as image */
-    padding: 20px; /* Add padding inside info box */
+    flex: 1; 
+    padding: 20px; 
     display: flex;
     flex-direction: column;
     justify-content:center;
   }
   
-  /* Style for the movie description below the image and info */
+
   .movie-description {
-    width: 100%; /* Full width of the page */
-    max-width: 1200px; /* Optional max width for consistency */
-    margin: 0 auto; /* Center horizontally */
-    padding: 20px; /* Padding inside the description */
-    text-align: center; /* Center text */
-    /* background-color: #fff; */ /* White background */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px; 
+    text-align: center; 
+   
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     font-weight: bold;
@@ -139,7 +139,7 @@ body {
 color:rgb(3, 37, 65);
   }
   .movie-info h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin: 10px 0;
     color:rgb(3, 37, 65) ; 
   }
@@ -169,4 +169,201 @@ color:rgb(3, 37, 65);
     font-weight: bold;
     color: #444;
   }
+
+@media (max-width: 1024px) {
+    .textStyle {
+      font-size: 1.1rem; 
+    }
+    
+    .nav_bar {
+      height: 70px; 
+    }
+    
+    .logo {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .logoImg {
+      width: 85%;
+      height: 85%;
+    }
   
+    .mainIcons {
+      height: 45px; 
+    }
+  
+    .innerIcons {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .user {
+      width: 35px; 
+    }
+  
+    .userAcc {
+      width: 34px;
+    }
+  
+    .contactUsImg {
+      width: 30px;
+    }
+  
+    .movie-content {
+      height: 600px; 
+    }
+  
+    .movie-image img {
+      width: 70%; 
+    }
+  
+    .movie-description {
+      font-size: 1rem; 
+    }
+  
+    .movie-info h1 {
+      font-size: 3rem; 
+    }
+  
+    .movie-info span {
+      font-size: 1.7rem; 
+    }
+  
+    .movie-info p {
+      font-size: 1.3rem; 
+    }
+  }
+  
+
+  @media (max-width: 768px) {
+    .textStyle {
+      font-size: 0.5rem;
+    }
+  
+    .nav_bar {
+      height: 60px;
+    }
+  
+    .logo {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .logoImg {
+      width: 80%;
+      height: 80%;
+    }
+  
+    .mainIcons {
+      height: 40px;
+    }
+  
+    .innerIcons {
+      width: 35px;
+      height: 35px;
+    }
+  
+    .user {
+      width: 30px; 
+    }
+  
+    .userAcc {
+      width: 28px;
+    }
+  
+    .contactUsImg {
+      width: 25px;
+    }
+  
+    .movie-content {
+      height: 800px; 
+      flex-direction: column; 
+    }
+  
+    .movie-image img {
+      width: 30%; 
+    }
+  
+    .movie-description {
+      font-size: 0.9rem;
+    }
+  
+    .movie-info h1 {
+      font-size: 2.5rem; 
+    }
+  
+    .movie-info span {
+      font-size: 1.5rem; 
+    }
+  
+    .movie-info p {
+      font-size: 1.2rem; 
+    }
+  }
+  
+  
+  @media (max-width: 480px) {
+    .textStyle {
+      font-size: 0.9rem; 
+    }
+  
+    .nav_bar {
+      height: 50px; 
+    }
+  
+    .logo {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .logoImg {
+      width: 75%;
+      height: 75%;
+    }
+  
+    .mainIcons {
+      height: 35px;
+    }
+  
+    .innerIcons {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .user {
+      width: 25px; 
+    }
+  
+    .userAcc {
+      width: 24px;
+    }
+  
+    .contactUsImg {
+      width: 22px;
+    }
+  
+    .movie-content {
+      height: auto; 
+    }
+  
+    .movie-image img {
+      width: 60%; 
+    }
+  
+    .movie-description {
+      font-size: 0.8rem; 
+    }
+  
+    .movie-info h1 {
+      font-size: 2rem;
+    }
+  
+    .movie-info span {
+      font-size: 1.2rem;
+    }
+  
+    .movie-info p {
+      font-size: 1rem;
+    }
+  }

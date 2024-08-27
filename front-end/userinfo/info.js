@@ -29,7 +29,7 @@ async function checkToken() {
       } else {
         console.log("Successful response");
         
-        // Div creation
+      
         let container = document.createElement("div");
         let infoBlock = document.createElement("div");
         let block = document.createElement("div"); 
@@ -53,12 +53,12 @@ async function checkToken() {
         logoutImage.width = 30;  
         logoutImage.height = 30; 
         logoutImage.style.verticalAlign = "middle";
-        // Style classes
+       
         container.classList.add("container");
         infoBlock.classList.add("infoBlock");
         block.classList.add("block");
         scdblock.classList.add("block");
-        /* favmovies.classList.add("favmovies"); */
+       
         changePasswordLink.classList.add("changePassword");
 
         block.innerHTML = `
@@ -68,12 +68,11 @@ async function checkToken() {
           <p>Birth Date: <span class="field">${response.userInfo.dob}</span></p>
         `;
 
-        // Create the content for the second block
         scdblock.innerHTML = `
           <p>Email: <span class="field">${response.userInfo.email}</span></p>
         `;
 
-        // Add "Change Password?" and the key icon
+        
         const changePasswordText = document.createElement("p");
         changePasswordText.textContent=" Change Password? "
         changePasswordLink.appendChild(changePasswordImage);
@@ -83,7 +82,7 @@ async function checkToken() {
      
         scdblock.appendChild(changePasswordText);
 
-        // Add "Log Out" and the logout icon
+        
         const logoutText = document.createElement("p");
         logoutText.textContent = "Log Out ";
         logoutLink.appendChild(logoutImage);
@@ -91,7 +90,7 @@ async function checkToken() {
         scdblock.appendChild(logoutText);
 
 
-        // Create the New `favmovies` Block
+        
         let favmovies = document.createElement("div");
         let favtext =document.createElement('div');
         favtext.textContent="Your Favorites Movies"
@@ -99,7 +98,7 @@ async function checkToken() {
         favmovies.classList.add("resultContainer");
 
 
-///////////////////////////////////////////////////////////////////
+
 
 resultDisplayer(response.moviesInfo);
 function resultDisplayer(rowss) {
@@ -138,7 +137,7 @@ function constructElement(
   mainshowCard.addEventListener("click", function () {
     showMovieDetails(showId, rowss);
   });
-  //  mainshowCard.setAttribute("href", "../signUp/signUp.html");
+ 
   moviePic.classList.add("innerMoviePic");
   movieN.classList.add("movieName");
   movieRate.classList.add("movieRating");
@@ -173,8 +172,7 @@ async function showMovieDetails(movieId, rowss) {
   sessionStorage.setItem("movie", JSON.stringify(myShow));
   let moviee = sessionStorage.getItem("movie");
 
-  // mainshowCard.setAttribute("href", "../signUp/signUp.html");
-  // window.location.href = "../movieInfo/movieinfo.html";
+ 
 }
 function fillMovieElement(
   MoviePicParam,
@@ -234,12 +232,12 @@ async function addMovieToFavorite(showId, watchListButtom, rowss) {
 
 
 
-        // Append all blocks to the container
+      
         infoBlock.append(block, scdblock);
         container.append(infoBlock,favtext, favmovies);
         document.body.appendChild(container);
 
-        // Add event listener for logout
+        
         logoutLink.addEventListener('click', function(event) {
           event.preventDefault();
           console.log('Logged out!');

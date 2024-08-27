@@ -14,7 +14,7 @@ html, body
     height:100%;
     position: relative;  
  background-image: url(../homePage/images/coverimg.jpg);
-  z-index: auto;    /*default*/
+  z-index: auto;    
 }
 .blurrDiv {
     position: fixed;
@@ -33,7 +33,7 @@ html, body
 .signUpDivForm {
     margin: 5px;
     background:rgb(3, 37, 65,0.8);
-    /* padding: 20px; */
+   
     border: 1px solid rgb(0, 0, 0);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -111,11 +111,11 @@ p,#loginL{
     font-weight: bold;
 }
 
-/* Media Queries */
+
 @media (max-width: 768px) {
     .signUpDivForm {
-        width: 95%; /* Increase width on smaller screens */
-        margin: 2.5%; /* Decrease margin on smaller screens */
+        width: 95%; 
+        margin: 2.5%; 
     }
 
     .labels,
@@ -124,7 +124,7 @@ p,#loginL{
     #signUpForm input[type="number"],
     #signUpForm input[type="password"],
     #signUpForm input[type="date"],#signupB{
-        max-width: 90%; /* Increase max-width to allow for more space on smaller screens */
+        max-width: 90%; 
     }
 }
 

@@ -13,7 +13,7 @@ html, body {
     height:100%;
     position: relative;  
  background-image: url(../homePage/images/coverimg.jpg);
-  z-index: auto;    /*default*/
+  z-index: auto;    
 }
 .blurrDiv {
     position: fixed;
@@ -38,7 +38,7 @@ html, body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 500px;
-    /* height: 100%; */
+   
     margin: 5%;
     color: aliceblue;
     position: relative;
@@ -114,15 +114,15 @@ p,#loginL{
     color: red;
     font-weight: bold;
 }
-/* Media Queries */
+
 @media (max-width: 768px) {
     .signInDivForm {
-        width: 95%; /* Increase width on smaller screens */
-        margin: 2.5%; /* Decrease margin on smaller screens */
+        width: 95%; 
+        margin: 2.5%; 
     }
 
     #signInForm input[type="email"], #signInForm input[type="password"], #signInB {
-        max-width: 90%; /* Increase max-width to allow for more space on smaller screens */
+        max-width: 90%; 
     }
 }
 

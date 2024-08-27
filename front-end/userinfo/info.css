@@ -141,7 +141,7 @@ width: 33px;
 
 .field {
   font-size: 1.1rem;
-  color: #ecf6ff/*rgb(132, 166, 189); rgb(66, 80, 80); */;
+  color: #ecf6ff;
   font-weight: lighter;
 
 }
@@ -191,7 +191,7 @@ width: 33px;
     }
 }
 
-/* Small screens (mobile phones) */
+
 @media (max-width: 480px) {
     .block p  {
         font-size: 0.8rem; 

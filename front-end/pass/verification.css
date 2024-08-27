@@ -13,7 +13,7 @@ html, body {
     height:100%;
     position: relative;  
  background-image: url(../homePage/images/coverimg.jpg);
-  z-index: auto;    /*default*/
+  z-index: auto;    
 }
 .blurrDiv {
     position: fixed;
@@ -42,7 +42,7 @@ html, body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 500px;
-    /* height: 100%; */
+   
     margin: 5%;
     color: aliceblue;
     position: relative;

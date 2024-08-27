@@ -59,7 +59,7 @@ function myFetcher(request) {
       console.log("the equest faillss : " + request);
     });
 }
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 function resultDisplayer(rowss) {
   for (let i = 0; i < rowss.length; i++) {
   
@@ -162,7 +162,7 @@ async function addMovieToFavorite(showId, watchListButtom, rowss) {
       if (response.status == 400) {
        console.log("error deleting");
       } else {
-        watchListButtom.innerText = "+"; //-
+        watchListButtom.innerText = "+"; 
         console.log("successful deleting");
       }
     } catch (error) {
@@ -175,7 +175,7 @@ async function addMovieToFavorite(showId, watchListButtom, rowss) {
         myShow = rowss[i];
       }
     }
-    watchListButtom.innerText = "+";//-
+    watchListButtom.innerText = "+";
     try {
       const response = await forwardRequest(
         { token: tokenn, movie: myShow },

@@ -3,12 +3,12 @@ import { forwardRequest } from "../util/requestSender.js";
 document
   .getElementById("signUpForm")
   .addEventListener("submit", async function (event) {
-    event.preventDefault(); // Prevents the default form submission
+    event.preventDefault(); 
 
-    // Create a FormData object from the form element
+    
     const formData = new FormData(event.target);
 
-    // Construct the data object using formData entries
+    
     const data = {
       firstName: formData.get("firstName"),
       lastName: formData.get("lastName"),
