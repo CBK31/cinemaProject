@@ -63,7 +63,7 @@ const resetpassword = async (req, res) => {
     const { email, confirmPassword, newPassword } = req.body;
 
     if (confirmPassword !== newPassword) {
-      res.status(400).json({ message: "Confirm password do not match" });
+      return res.status(400).json({ message: "Confirm password do not match" });
     }
 
     const userFinder = await findUserByEmail(email);
