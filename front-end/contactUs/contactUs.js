@@ -10,14 +10,14 @@ document
     const data = {
       firstName: formData.get("name"),
       email: formData.get("email"),
-      phoneNumber: formData.get("textarea"),
-    };
+      message: formData.get("textarea"),
 
+    }
     try {
       const response = await forwardRequest(
         data,
         "POST",
-        "http://localhost:3000/user/contact"  //to be changed 
+        "http://localhost:3000/user/contact"  
       );
       
       let datamssg = document.getElementById("mssg");

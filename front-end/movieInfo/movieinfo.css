@@ -92,7 +92,7 @@ body {
     display: flex; /* Side-by-side layout */
     width: 100%; /* Full width */
     max-width: 1200px; /* Optional max width for the content */
-    background-color: #fff; /* White background */
+    /*background-color: #fff;  White background */
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden; /* Ensure children stay inside */
@@ -106,7 +106,7 @@ body {
   }
   
   .movie-image img {
-    width: 80%; /* Full width inside the container */
+    width: 75%; /* Full width inside the container */
     height: 100%; /* Keep aspect ratio */
     border-radius: 15px;
   }
@@ -127,21 +127,28 @@ body {
     margin: 0 auto; /* Center horizontally */
     padding: 20px; /* Padding inside the description */
     text-align: center; /* Center text */
-    background-color: #fff; /* White background */
+    /* background-color: #fff; */ /* White background */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.0rem;
+    color:rgb(3, 37, 65);
   }
   
   .movie-info h1 {
     font-size: 4rem;
     margin: 10px 0;
-    color: #333;
+    color:rgb(3, 37, 65) ; 
+  }
+  .movie-info span{
+    color:rgb(3, 37, 65) ; 
+    font-size: 1.9rem;
   }
   
   .movie-info p {
     margin:2rem;
     color: #555;
-    font-size: 1.9rem;
+    font-size: 1.5rem;
     font-weight:bold;
     line-height: 1.0rem;
     margin-left:0px;
@@ -149,7 +156,7 @@ body {
   
   .movie-info .genres {
     font-style: italic;
-    color: #777;
+    color: #555;
   }
   
   .movie-info .rating,

@@ -12,11 +12,11 @@ function renderMovie(movie) {
 
             <div class="movie-info">
                 <h1>${movie.show.name}</h1>
-                <p class="rating"><strong>Rating:</strong> ★ ${movie.show.rating.average}</p>
-                <p class="runtime"><strong>Runtime:</strong> ${movie.show.runtime} min</p>
-                <p class="language"><strong>Language:</strong> ${movie.show.language}</p>
-                <p class="ended"><strong>Date:</strong> ${movie.show.ended}</p>
-                <p class="genres"><strong>Genres:</strong> ${movie.show.genres.join(', ')}</p>
+                <p class="rating"><span>Rating:    </span> ★ ${movie.show.rating.average}</p>
+                <p class="runtime"><span>Runtime:  </span> ${movie.show.runtime} min</p>
+                <p class="language"><span>Language:</span> ${movie.show.language}</p>
+                <p class="ended"><span>Date:       </span> ${movie.show.ended}</p>
+                <p class="genres"><span>Genres:    </span> ${movie.show.genres.join(', ')}</p>
             </div>
             </div>
             
