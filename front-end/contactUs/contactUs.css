@@ -99,7 +99,7 @@ width: 33px;
     width: 90%;
     margin: 50px auto;
     padding: 20px;
-    background-color: rgb(255, 255, 255);
+    background-color:rgb(3, 37, 65);
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -107,7 +107,7 @@ width: 33px;
 .aboutText {
     font-family: 'Merriweather', serif; 
     font-size: 1.2rem; 
-    color:  rgb(3, 37, 65);
+    color:  #ecf6ff;
     line-height: 1.6;
     text-align: center;
 }
@@ -129,11 +129,11 @@ width: 33px;
 
 .contact-info, .contact-form {
   
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(3, 37, 65);
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
-    color:  rgb(3, 37, 65);
+    color:  #ecf6ff;
 
 }
 
@@ -149,6 +149,7 @@ width: 33px;
     /* height: 100%; */
     justify-content: center; /* Center content vertically */
     padding: 20px; 
+    
 }
 
 .contact-form {
@@ -176,13 +177,13 @@ width: 33px;
     
     width: 40%;
     height: 40px;
-    border: 2px  rgb(3, 37, 65) solid;
+    border: 3px  #ecf6ff solid;
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     min-width: 150px;
-    background-color:  rgb(3, 37, 65);
+    background-color:  #b4dbff;
     
 }
 .submit-contact{ 
@@ -193,11 +194,10 @@ width: 33px;
 }
 
 #name , #email ,#message{ /* inputs  */
-    color: white;
-    width: 90%;
+  width: 100%;
   height: 100%;
-  border: none;
-  margin-left: 10px;
+  border-radius:15px;
+ 
   height: 100%;
   background-color:transparent;
   border: 0px ;
@@ -209,25 +209,26 @@ width: 33px;
     
     width: 90%;
     height: 150px;
-    border: 2px  rgb(3, 37, 65) solid;
+    border: 3px  #ecf6ff solid;
     border-radius: 15px;
     display: flex;
     align-items: center;
  
     justify-content: space-between;
     min-width: 150px;
-    background-color:  rgb(3, 37, 65);
+    background-color: #b4dbff;
     
 }
 #submitB{
-    color: white;
-    background-color:  rgb(3, 37, 65);
-    border: 2px  rgb(3, 37, 65) solid;
+    color: rgb(3, 37, 65);
+    background-color:   #b4dbff;
+    border: 3px  #ecf6ff solid;
     border-radius: 50%;
     width: 180px;
     height:180px;
     margin-top: 20px; /* Pushes the button to the bottom */
     font-family: "Source Sans Pro", "Arial", "sans-serif";
   font-size: 1rem;
+  font-weight: bold;
 }
 

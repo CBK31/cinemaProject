@@ -1,3 +1,4 @@
+
 let boll = true;
 let timing = 0;
 let formInput = document.querySelector(".formclass");
@@ -66,8 +67,7 @@ function myFetcher(request) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 function resultDisplayer(rowss) {
   for (let i = 0; i < rowss.length; i++) {
-    //  const element = array[i];
-    //console.log(rowss[i].show.name + " score : " + rowss[i].score);
+  
     constructElement(
       rowss[i].show.image.medium,
       rowss[i].show.name,
@@ -101,9 +101,6 @@ function constructElement(
   mainshowCard.addEventListener("click", function () {
     showMovieDetails(showId, rowss);
   });
-  mainshowCard.addEventListener("click", function () {
-    window.location.href = "../movieInfo/movieInfo.html";
-  }); // changed
 
   moviePic.classList.add("innerMoviePic");
   movieN.classList.add("movieName");
@@ -115,11 +112,6 @@ function constructElement(
     await addMovieToFavorite(showId, watchListButtom, rowss);
   });
   mainContainer.appendChild(mainshowCard);
-
-  watchListButtom.addEventListener("click", async function (e) {
-    e.stopPropagation();
-    await addMovieToFavorite(showId, watchListButtom, rowss);
-  });
 
   fillMovieElement(
     dataMoviePicParam,
@@ -157,17 +149,23 @@ async function addMovieToFavorite(showId, watchListButtom, rowss) {
   if (!tokenn || tokenn === undefined) {
     console.log("my token is here : " + tokenn);
     window.location.href = "../signIn/signIn.html";
-    return; //changed
-  }
-
+    return; }
+    
   if (watchListButtom.innerText.includes("-")) {
+    watchListButtom.innerText = "+";
     try {
       const response = await forwardRequest(
-        { movieId: showId, token: tokenn },
+        { movieId: showId ,
+          token:tokenn,
+         },
         "POST",
         "http://localhost:3000/movie/delete"
       );
-      watchListButtom.innerText = "+";
+      if (response.status == 400) {
+        // todo joya
+      } else {
+        watchListButtom.innerText = "-";
+      }
     } catch (error) {
       console.error("Error:", error);
     }
@@ -178,14 +176,17 @@ async function addMovieToFavorite(showId, watchListButtom, rowss) {
         myShow = rowss[i];
       }
     }
-
+    watchListButtom.innerText = "-";
     try {
       const response = await forwardRequest(
         { token: tokenn, movie: myShow },
         "POST",
         "http://localhost:3000/movie/add"
       );
-      watchListButtom.innerText = "-";
+      if (response.status == 400) {
+      } else {
+        watchListButtom.innerText = "-";
+      }
     } catch (error) {
       console.error("Error:", error);
     }
