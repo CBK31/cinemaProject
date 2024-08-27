@@ -21,6 +21,7 @@ function renderMovie(movie) {
             </div>
             
             <div class="movie-description">
+            <p><h2>Description</h2></p>
                 <p>${movie.show.summary}</p>
             
         </div>
