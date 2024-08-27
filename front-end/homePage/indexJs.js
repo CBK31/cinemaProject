@@ -103,8 +103,8 @@ function constructElement(
   });
   mainshowCard.addEventListener("click", function () {
     window.location.href = "../movieInfo/movieInfo.html";
-  });// changed
-  
+  }); // changed
+
   moviePic.classList.add("innerMoviePic");
   movieN.classList.add("movieName");
   movieRate.classList.add("movieRating");
@@ -120,7 +120,7 @@ function constructElement(
     e.stopPropagation();
     await addMovieToFavorite(showId, watchListButtom, rowss);
   });
-  
+
   fillMovieElement(
     dataMoviePicParam,
     dataMovieNameParam,
@@ -130,7 +130,6 @@ function constructElement(
     movieRate,
     watchListButtom
   );
-
 }
 
 function fillMovieElement(
@@ -162,17 +161,13 @@ async function addMovieToFavorite(showId, watchListButtom, rowss) {
   }
 
   if (watchListButtom.innerText.includes("-")) {
-    watchListButtom.innerText = "+";
     try {
       const response = await forwardRequest(
-        { movieId: showId,
-          token:tokenn,
-        
-         },
+        { movieId: showId, token: tokenn },
         "POST",
         "http://localhost:3000/movie/delete"
       );
-      
+      watchListButtom.innerText = "+";
     } catch (error) {
       console.error("Error:", error);
     }
@@ -183,17 +178,14 @@ async function addMovieToFavorite(showId, watchListButtom, rowss) {
         myShow = rowss[i];
       }
     }
-    watchListButtom.innerText = "+";
+
     try {
       const response = await forwardRequest(
         { token: tokenn, movie: myShow },
         "POST",
         "http://localhost:3000/movie/add"
       );
-      if (response.status == 400) {
-      } else {
-        watchListButtom.innerText = "-";
-      }
+      watchListButtom.innerText = "-";
     } catch (error) {
       console.error("Error:", error);
     }
@@ -251,4 +243,3 @@ export const forwardRequest = async (body, requestMethod, serviceUrl) => {
     }
   }
 };
-
