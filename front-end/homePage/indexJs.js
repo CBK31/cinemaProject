@@ -161,8 +161,8 @@ async function addMovieToFavorite(showId, watchListButtom, rowss) {
     return; //changed
   }
 
-  if (watchListButtom.innerText.includes("+")) {
-    watchListButtom.innerText = "-";
+  if (watchListButtom.innerText.includes("-")) {
+    watchListButtom.innerText = "+";
     try {
       const response = await forwardRequest(
         { movieId: showId,
