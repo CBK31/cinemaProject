@@ -166,7 +166,10 @@ width: 33px;
   text-align: center;
 
 }
-
+.keyIcon {
+  text-decoration: none;
+  
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -182,22 +185,23 @@ width: 33px;
 }
 
 .block {
-    background-color: white;
+    background-color:rgb(3, 37, 65) ; 
     padding: 20px;
     margin: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 45%;
+    border:2px solid rgb(3, 37, 65) ; 
 }
 .block p{
     font-size: 1.2rem;
-    color: rgb(34, 43, 43);
+    color:#b4dbff;
     font-weight: bold;
 }
 
 .field {
   font-size: 1.1rem;
-  color: rgb(66, 80, 80);
+  color: #ecf6ff/*rgb(132, 166, 189); rgb(66, 80, 80); */;
   font-weight: lighter;
 
 }
@@ -233,6 +237,7 @@ width: 33px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
 }
 
 
@@ -268,15 +273,35 @@ width: 33px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 90%;
+  width: 80%;
   min-height: 250px;
   flex-wrap: wrap;
   transition: all 2s;
-  margin-top: 2.5%;
+  margin-top: 0;
+  margin-bottom: 2.5%;
   height: 130%;
+   border :rgb(3, 37, 65) solid 3px;
+ 
 }
 
- 
+.favtext {
+  color:  #b4dbff;
+  border: 3px solid rgb(3, 37, 65); 
+  border-bottom: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 5%;
+  width: 80%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: 2.5%;
+  margin-bottom: 0;
+  background-color: rgb(3, 37, 65);
+  text-align: center;
+}
 
 .mainShowMovie {
   display: flex;

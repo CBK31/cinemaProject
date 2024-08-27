@@ -63,7 +63,7 @@ function myFetcher(request) {
       console.log("the equest faillss : " + request);
     });
 }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 function resultDisplayer(rowss) {
   for (let i = 0; i < rowss.length; i++) {
     //  const element = array[i];
@@ -139,6 +139,7 @@ function fillMovieElement(
   movieRatep.innerText = "★  " + (MovieRateparam * 100).toFixed(2) + " % ";
   watchListButtomp.innerText = "+";
 }
+
 //hayde l session li bt jib l token
 let tokenn = sessionStorage.getItem("token");
 console.log("my toke : " + tokenn);
@@ -148,8 +149,8 @@ async function addMovieToFavorite(showId, watchListButtom, rowss) {
   if (!tokenn || tokenn === undefined) {
     console.log("my token is here : " + tokenn);
     window.location.href = "../signIn/signIn.html";
-  }
-  if (watchListButtom.innerText.includes("✔")) {
+  }//-
+  if (watchListButtom.innerText.includes("-")) {
     watchListButtom.innerText = "+";
     try {
       const response = await forwardRequest(
@@ -160,7 +161,7 @@ async function addMovieToFavorite(showId, watchListButtom, rowss) {
       if (response.status == 400) {
         // todo joya
       } else {
-        watchListButtom.innerText = "✔";
+        watchListButtom.innerText = "-";
       }
     } catch (error) {
       console.error("Error:", error);
@@ -172,7 +173,7 @@ async function addMovieToFavorite(showId, watchListButtom, rowss) {
         myShow = rowss[i];
       }
     }
-    watchListButtom.innerText = "✔";
+    watchListButtom.innerText = "-";
     try {
       const response = await forwardRequest(
         { token: tokenn, movie: myShow },
@@ -181,7 +182,7 @@ async function addMovieToFavorite(showId, watchListButtom, rowss) {
       );
       if (response.status == 400) {
       } else {
-        watchListButtom.innerText = "✔";
+        watchListButtom.innerText = "-";
       }
     } catch (error) {
       console.error("Error:", error);
@@ -240,3 +241,4 @@ export const forwardRequest = async (body, requestMethod, serviceUrl) => {
     }
   }
 };
+
